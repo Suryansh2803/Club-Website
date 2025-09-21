@@ -157,27 +157,70 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTeamSlider();
     initializeNewsletter();
     initializeAnimations();
+    initializeSparkleEffect();
 });
 
 // Navigation functionality
 function initializeNavigation() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
+    const body = document.body;
 
     if (menuToggle && nav) {
+        // Create backdrop element if it doesn't exist
+        let backdrop = document.querySelector('.nav-backdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'nav-backdrop';
+            document.body.appendChild(backdrop);
+        }
+
         // Mobile menu toggle
         menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            const isActive = nav.classList.contains('active');
+            
+            if (isActive) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
+
+        // Close menu when clicking on backdrop
+        backdrop.addEventListener('click', closeMobileMenu);
 
         // Close menu when clicking on a link
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                menuToggle.classList.remove('active');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu on window resize to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        function openMobileMenu() {
+            nav.classList.add('active');
+            menuToggle.classList.add('active');
+            backdrop.classList.add('active');
+            body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('active');
+            backdrop.classList.remove('active');
+            body.style.overflow = 'auto';
+        }
     }
 }
 
@@ -554,4 +597,178 @@ window.addEventListener('resize', function() {
                 });
             }, 500);
         });
+
+// Sparkle cursor effect for hero section
+function initializeSparkleEffect() {
+    const heroSection = document.querySelector('.hero-section');
+    if (!heroSection) return;
+
+    let customCursor = null;
+    let sparkleCount = 0;
+    const maxSparkles = 50; // Limit number of sparkles for performance
+    let isMouseMoving = false;
+    let mouseMoveTimeout;
+
+    // Create custom cursor
+    function createCustomCursor() {
+        customCursor = document.createElement('div');
+        customCursor.className = 'custom-cursor';
+        document.body.appendChild(customCursor);
+    }
+
+    // Create sparkle at cursor position
+    function createSparkle(x, y, type = 'normal') {
+        if (sparkleCount >= maxSparkles) return;
+
+        const sparkle = document.createElement('div');
+        sparkle.className = `sparkle ${type}`;
+        
+        // Randomize sparkle properties
+        const size = Math.random() * 6 + 2; // 2-8px
+        const delay = Math.random() * 0.3; // 0-0.3s delay
+        const duration = type === 'burst' ? 1.2 : (Math.random() * 0.5 + 0.8); // 0.8-1.3s duration
+        
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        sparkle.style.width = size + 'px';
+        sparkle.style.height = size + 'px';
+        sparkle.style.animationDelay = delay + 's';
+        sparkle.style.animationDuration = duration + 's';
+        
+        // Randomize colors
+        const colors = [
+            'radial-gradient(circle, #ffffff 0%, #2b8aef 50%, transparent 100%)',
+            'radial-gradient(circle, #ffffff 0%, #ff6b6b 50%, transparent 100%)',
+            'radial-gradient(circle, #ffffff 0%, #4ecdc4 50%, transparent 100%)',
+            'radial-gradient(circle, #ffffff 0%, #ffd166 50%, transparent 100%)'
+        ];
+        sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        
+        heroSection.appendChild(sparkle);
+        sparkleCount++;
+
+        // Remove sparkle after animation
+        setTimeout(() => {
+            if (sparkle.parentNode) {
+                sparkle.parentNode.removeChild(sparkle);
+                sparkleCount--;
+            }
+        }, (duration + delay) * 1000);
+    }
+
+    // Create trail effect
+    function createTrail(x, y) {
+        const trail = document.createElement('div');
+        trail.className = 'sparkle-trail';
+        trail.style.left = x + 'px';
+        trail.style.top = y + 'px';
+        
+        heroSection.appendChild(trail);
+        
+        setTimeout(() => {
+            if (trail.parentNode) {
+                trail.parentNode.removeChild(trail);
+            }
+        }, 500);
+    }
+
+    // Mouse move handler
+    function handleMouseMove(e) {
+        if (!isMouseMoving) {
+            isMouseMoving = true;
+            createCustomCursor();
+        }
+
+        // Update custom cursor position
+        if (customCursor) {
+            customCursor.style.left = e.clientX - 10 + 'px';
+            customCursor.style.top = e.clientY - 10 + 'px';
+        }
+
+        // Create sparkles with some randomness
+        if (Math.random() < 0.3) { // 30% chance to create sparkle
+            const offsetX = (Math.random() - 0.5) * 20;
+            const offsetY = (Math.random() - 0.5) * 20;
+            createSparkle(e.clientX + offsetX, e.clientY + offsetY, 'trail');
+        }
+
+        // Create trail effect occasionally
+        if (Math.random() < 0.1) { // 10% chance to create trail
+            createTrail(e.clientX, e.clientY);
+        }
+
+        // Clear timeout and set new one
+        clearTimeout(mouseMoveTimeout);
+        mouseMoveTimeout = setTimeout(() => {
+            isMouseMoving = false;
+            if (customCursor && customCursor.parentNode) {
+                customCursor.parentNode.removeChild(customCursor);
+                customCursor = null;
+            }
+        }, 1000);
+    }
+
+    // Mouse enter handler
+    function handleMouseEnter() {
+        document.body.style.cursor = 'none';
+    }
+
+    // Mouse leave handler
+    function handleMouseLeave() {
+        document.body.style.cursor = 'auto';
+        if (customCursor && customCursor.parentNode) {
+            customCursor.parentNode.removeChild(customCursor);
+            customCursor = null;
+        }
+        isMouseMoving = false;
+    }
+
+    // Click handler for burst effect
+    function handleClick(e) {
+        // Create a burst of sparkles on click
+        for (let i = 0; i < 8; i++) {
+            const angle = (i / 8) * Math.PI * 2;
+            const distance = Math.random() * 30 + 20;
+            const x = e.clientX + Math.cos(angle) * distance;
+            const y = e.clientY + Math.sin(angle) * distance;
+            createSparkle(x, y, 'burst');
+        }
+        
+        // Create additional sparkles at click point
+        for (let i = 0; i < 3; i++) {
+            const offsetX = (Math.random() - 0.5) * 15;
+            const offsetY = (Math.random() - 0.5) * 15;
+            createSparkle(e.clientX + offsetX, e.clientY + offsetY, 'burst');
+        }
+    }
+
+    // Add event listeners
+    heroSection.addEventListener('mousemove', handleMouseMove);
+    heroSection.addEventListener('mouseenter', handleMouseEnter);
+    heroSection.addEventListener('mouseleave', handleMouseLeave);
+    heroSection.addEventListener('click', handleClick);
+
+    // Cleanup function
+    function cleanup() {
+        heroSection.removeEventListener('mousemove', handleMouseMove);
+        heroSection.removeEventListener('mouseenter', handleMouseEnter);
+        heroSection.removeEventListener('mouseleave', handleMouseLeave);
+        heroSection.removeEventListener('click', handleClick);
+        
+        if (customCursor && customCursor.parentNode) {
+            customCursor.parentNode.removeChild(customCursor);
+        }
+        
+        // Remove all sparkles
+        const sparkles = heroSection.querySelectorAll('.sparkle');
+        sparkles.forEach(sparkle => {
+            if (sparkle.parentNode) {
+                sparkle.parentNode.removeChild(sparkle);
+            }
+        });
+    }
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', cleanup);
+}
  
