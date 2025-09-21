@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Abhyudaya Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+
+
+</head>
+
+<body>
+    <img class="image-gradient" src="grid.jpeg" alt="gradient">
+    <div class="layer-blur"></div>
+    <spline-viewer class="spline-background" url="https://prod.spline.design/qJ9Z2BLxuzo-CT6K/scene.splinecode"></spline-viewer>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.jpeg" alt="logo" class="nav-logo">
+                <div class="logo-text">Abhyudaya Club</div>
+            </div>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="team.html" class="active">Team</a>
+                <a href="event.html">Events and Gallery</a>
+                <a href="contactUs.html">Contact us</a>
+            </nav>
+        </header>
+
+        <main class="team-page">
+            <h1 class="page-title">Our Team</h1>
+            <p class="page-subtitle">Meet the brilliant minds behind Abhyudaya Club</p>
+
+            <!-- 3D Team Slider -->
+            <div class="team-slider-container">
+                <div class="slider-wrapper">
+                    <div class="team-slider" id="teamSlider">
+                        <!-- Technical Team Card -->
+                        <div class="team-card" data-team="technical">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3 class="card-title">Technical</h3>
+                                <p class="card-subtitle">Development & Innovation</p>
+                            </div>
+                        </div>
+
+                        <!-- Management Team Card -->
+                        <div class="team-card" data-team="management">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <h3 class="card-title">Management</h3>
+                                <p class="card-subtitle">Leadership & Strategy</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Team Card -->
+                        <div class="team-card" data-team="social">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <h3 class="card-title">Social Media</h3>
+                                <p class="card-subtitle">Digital Presence</p>
+                            </div>
+                        </div>
+
+                        <!-- PR Team Card -->
+                        <div class="team-card" data-team="pr">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <h3 class="card-title">PR</h3>
+                                <p class="card-subtitle">Public Relations</p>
+                            </div>
+                        </div>
+
+                        <!-- DAM Team Card -->
+                        <div class="team-card" data-team="dam">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h3 class="card-title">DAM</h3>
+                                <p class="card-subtitle">Data & Analytics</p>
+                            </div>
+                        </div>
+
+                        <!-- Editorial Team Card -->
+                        <div class="team-card" data-team="editorial">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h3 class="card-title">Editorial</h3>
+                                <p class="card-subtitle">Content & Design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Detail Modal -->
+            <div class="team-modal" id="teamModal">
+                <div class="modal-backdrop" id="modalBackdrop"></div>
+                <div class="modal-content">
+                    <button class="close-btn" id="closeBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="team-detail-book" id="teamDetailBook">
+                        <!-- Content will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-heading">Abhyudaya Club</h3>
+                    <p class="contact-info">Where ideas take flight and innovation knows no bounds. Join us in our
+                        journey to create, innovate and elevate.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="event.html">Events</a></li>
+                        <li><a href="event.html">Gallery</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-heading">Upcoming Events</h3>
+                    <ul class="footer-links">
+                        <li><a href="event.html">Hackathon 2023 - Oct 15-16</a></li>
+                        <li><a href="event.html">AI Workshop - Oct 22</a></li>
+                        <li><a href="event.html">Industry Connect - Nov 5</a></li>
+                        <li><a href="event.html">Project Showcase - Nov 20</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p class="contact-info">Subscribe to our newsletter to get updates on upcoming events and
+                        activities.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Abhyudaya Club. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.64/build/spline-viewer.js"></script>
+</body>
+
+</html>

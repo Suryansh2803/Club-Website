@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Abhyudaya Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contactUs.css">
+</head>
+
+<body>
+    <!-- Removed the background image and blur layer -->
+<script src="script.js"></script>
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="logo" class="nav-logo">
+            <div class="logo-text">Abhyudaya Club</div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="team.html">Team</a>
+            <a href="event.html">Events and Gallery</a>
+            <a href="contactUs.html" class="active">Contact us</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">CONTACT US</h1>
+            <p class="page-subtitle">Get in touch with Abhyudaya Club. We'd love to hear from you and answer any questions you may have.</p>
+        </div>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Location</h3>
+                    <p class="contact-info">
+                        G.L. Bajaj Institute of Technology & Management<br>
+                        Plot No. 2, Knowledge Park III<br>
+                        Greater Noida, Uttar Pradesh 201306
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email Us</h3>
+                    <p class="contact-info">
+                        <a href="mailto:abhyudaya@glbajaj.ac.in" class="contact-link">abhyudaya@glbajaj.ac.in</a><br>
+                        <a href="mailto:aimlclub@glbajaj.ac.in" class="contact-link">aimlclub@glbajaj.ac.in</a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">Call Us</h3>
+                    <p class="contact-info">
+                        Club Coordinator: +91 98765 43210<br>
+                        Student Head: +91 91234 56789
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h2 class="form-title">Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="What is this regarding?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.366167057756!2d77.49818957533126!3d28.47447507575959!2m3!1f0!2f0!3f0!3m2!1i1020!2i768!4f13.1!3m3!1m2!1s0x390cec5a6b5fc3b%3A0x5d3d32e6b6e24b45!2sG.L.%20Bajaj%20Institute%20of%20Technology%20%26%20Management!5e0!3m2!1sen!2sin!4v1695300000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-heading">Abhyudaya Club</h3>
+                <p class="contact-info">Where ideas take flight and innovation knows no bounds. Join us in our journey to create, innovate and elevate.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="event.html">Gallery</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contactUs.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Upcoming Events</h3>
+                <ul class="footer-links">
+                    <li><a href="event.html">Hackathon 2023 - Oct 15-16</a></li>
+                    <li><a href="event.html">AI Workshop - Oct 22</a></li>
+                    <li><a href="event.html">Industry Connect - Nov 5</a></li>
+                    <li><a href="event.html">Project Showcase - Nov 20</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-heading">Contact Info</h3>
+                <p class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i> G.L. Bajaj Institute of Technology & Management<br>
+                    <i class="fas fa-envelope"></i> abhyudaya@glbajaj.ac.in<br>
+                    <i class="fas fa-phone"></i> +91 XXXXX XXXXX
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Abhyudaya Club. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+    
