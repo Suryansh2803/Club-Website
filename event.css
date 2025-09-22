@@ -151,9 +151,9 @@
             border-radius: 25px;
             position: relative;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
+            background: linear-gradient(135deg, rgba(106, 5, 114, 0.18), rgba(43,138,239,0.18));
             backdrop-filter: blur(10px);
-            border: 1px solid #333333;
+            border: 1px solid rgba(106, 5, 114, 0.35);
             animation: fadeInUp 0.8s ease-out both;
         }
 
@@ -190,17 +190,17 @@
 
         nav a:hover {
             color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #666666;
+            background: linear-gradient(135deg, rgba(106, 5, 114, 0.3), rgba(43,138,239,0.3));
+            border-color: rgba(106, 5, 114, 0.6);
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 20px rgba(106, 5, 114, 0.25);
         }
 
         nav a.active {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #ffffff;
+            background: linear-gradient(135deg, rgba(106, 5, 114, 0.45), rgba(43,138,239,0.45));
+            border-color: rgba(106, 5, 114, 0.9);
             color: #fff;
-            box-shadow: 0 5px 25px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 25px rgba(106, 5, 114, 0.35);
             transform: translateY(-2px);
         }
 
