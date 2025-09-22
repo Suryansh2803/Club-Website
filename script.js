@@ -1,151 +1,118 @@
 // Team data for each department
 const teamData = {
-    technical: {
-        title: "Technical Team",
-        description: "Our technical wizards who bring ideas to life through code and innovation.",
+    core: {
+        title: "Core Team",
+        description: "Executive leadership and faculty coordination.",
         members: [
-            {
-                name: "Sarah Smith",
-                role: "Technical Lead",
-                description: "Full-stack developer with expertise in AI/ML implementation and mentoring.",
-                skills: ["React", "Node.js", "Python", "TensorFlow"],
-                social: { linkedin: "#", github: "#", twitter: "#" },
-                avatar: "fas fa-code"
-            },
-            {
-                name: "Alex Johnson",
-                role: "Senior Developer",
-                description: "Backend specialist focused on scalable architecture and database design.",
-                skills: ["Python", "Django", "PostgreSQL", "AWS"],
-                social: { linkedin: "#", github: "#" },
-                avatar: "fas fa-server"
-            },
-            {
-                name: "Maria Garcia",
-                role: "Frontend Developer",
-                description: "UI/UX enthusiast creating beautiful and intuitive user experiences.",
-                skills: ["React", "Vue.js", "CSS3", "Figma"],
-                social: { linkedin: "#", github: "#", instagram: "#" },
-                avatar: "fas fa-paint-brush"
-            }
+            { name: "Riya Batra", role: "President", description: "", skills: [], social: {}, avatar: "fas fa-crown" },
+            { name: "Kunal Rohilla", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie" },
+            { name: "Palak Bansal", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check" },
+            { name: "Jahan Aara", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" },
+            { name: "Hardik Varshney", role: "PR Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Swasti Jaiswal", role: "PR Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Tarun Kaushik", role: "Creative Head", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
+            { name: "Kartik Singhal", role: "Creative Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
+            { name: "Shiven", role: "Tech Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Djvyam Srivastava", role: "Tech Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Rajeev Kushwaha", role: "Social Media Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Kriti Jadil", role: "Social Media Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Lavanya Garg", role: "DAM Lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Mayank Chaurasia", role: "DAM Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Aditya Mani Tripathi", role: "Management Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Avnish Awasthi", role: "Management Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Kritika", role: "Editorial Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Avichal Pandey", role: "Editorial Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Zarrish Ma'am", role: "Faculty Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-chalkboard-teacher" }
+        ]
+    },
+    technical: {
+        title: "Tech Team",
+        description: "Developers and engineers driving technology initiatives.",
+        members: [
+            { name: "Satyam Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Manya Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Tanishk Rastogi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Suryansh Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Himanshu Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Arsh Murtaza", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Sameer Rathore", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Aman Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Nikunj Goyal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" }
         ]
     },
     management: {
         title: "Management Team",
-        description: "Strategic leaders who guide the club's vision and ensure smooth operations.",
+        description: "Operations, planning, and coordination.",
         members: [
-            {
-                name: "John Doe",
-                role: "President",
-                description: "Visionary leader with 3+ years of experience in AI/ML and event organization.",
-                skills: ["Leadership", "Strategy", "Python", "Project Management"],
-                social: { linkedin: "#", github: "#", twitter: "#" },
-                avatar: "fas fa-crown"
-            },
-            {
-                name: "Mike Johnson",
-                role: "Vice President",
-                description: "Operations specialist coordinating events and managing club communications.",
-                skills: ["Operations", "Communication", "Data Analysis", "Event Planning"],
-                social: { linkedin: "#", github: "#", facebook: "#" },
-                avatar: "fas fa-users-cog"
-            },
-            {
-                name: "Lisa Chen",
-                role: "Treasurer",
-                description: "Financial management expert ensuring sustainable club operations.",
-                skills: ["Finance", "Budgeting", "Analytics", "Excel"],
-                social: { linkedin: "#", twitter: "#" },
-                avatar: "fas fa-chart-line"
-            }
+            { name: "Upendra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Siddharth Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Palak Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Divyansh Srivastav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Jai thawal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Unayan Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Anushka Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Kinjal Rajput", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Aayush Chauhan", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" }
         ]
     },
     social: {
         title: "Social Media Team",
-        description: "Digital storytellers who amplify our club's presence across all platforms.",
+        description: "Digital presence and community engagement.",
         members: [
-            {
-                name: "Emma Wilson",
-                role: "Social Media Lead",
-                description: "Creative content creator and social media strategist.",
-                skills: ["Content Creation", "Social Media", "Design", "Analytics"],
-                social: { instagram: "#", twitter: "#", linkedin: "#" },
-                avatar: "fas fa-share-alt"
-            },
-            {
-                name: "David Kim",
-                role: "Content Creator",
-                description: "Visual storyteller specializing in video and graphic content.",
-                skills: ["Video Editing", "Photoshop", "After Effects", "Photography"],
-                social: { instagram: "#", youtube: "#", behance: "#" },
-                avatar: "fas fa-video"
-            }
+            { name: "Ananya Singhal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Anishkid", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Shruti Kesrawani", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Shreya Trivedi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Vasundhara Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" }
         ]
     },
     pr: {
-        title: "Public Relations Team",
-        description: "Brand ambassadors who build relationships and manage our public image.",
+        title: "PR Team",
+        description: "Public relations and outreach.",
         members: [
-            {
-                name: "Rachel Brown",
-                role: "PR Lead",
-                description: "Communication expert managing external relationships and media outreach.",
-                skills: ["Public Relations", "Communication", "Event Planning", "Writing"],
-                social: { linkedin: "#", twitter: "#" },
-                avatar: "fas fa-bullhorn"
-            },
-            {
-                name: "Tom Anderson",
-                role: "Media Coordinator",
-                description: "Event coordinator and media liaison for club activities.",
-                skills: ["Event Management", "Media Relations", "Coordination", "Networking"],
-                social: { linkedin: "#", facebook: "#" },
-                avatar: "fas fa-microphone"
-            }
+            { name: "Yash Sharma", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Akshita Dhingra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Nishit Tiwari", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Sakshi Sinha", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Akshay Bhati", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Namrata Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Ishita Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Archita Saxena", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Aditya Tiwari", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" }
+        ]
+    },
+    creative: {
+        title: "Creative Team",
+        description: "Design, visuals, and creative concepts.",
+        members: [
+            { name: "Siddharth Jha", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
+            { name: "Sachin Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
+            { name: "Avishk Singh Shishodia", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
+            { name: "Sumit Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" }
         ]
     },
     dam: {
-        title: "Data & Analytics Team",
-        description: "Data scientists who turn information into actionable insights.",
+        title: "DAM Team",
+        description: "Data acquisition and management.",
         members: [
-            {
-                name: "Emily Chen",
-                role: "Data Lead",
-                description: "Research enthusiast with publications in AI journals and data science expertise.",
-                skills: ["Data Science", "Python", "R", "Machine Learning"],
-                social: { linkedin: "#", github: "#", twitter: "#" },
-                avatar: "fas fa-database"
-            },
-            {
-                name: "James Wilson",
-                role: "Analytics Specialist",
-                description: "Business intelligence expert focused on data visualization and insights.",
-                skills: ["Tableau", "Power BI", "SQL", "Statistics"],
-                social: { linkedin: "#", github: "#" },
-                avatar: "fas fa-chart-bar"
-            }
+            { name: "Rishi om Patidar", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Bhumi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Manjari Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Aditya Vaid", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Anuradha Sharma", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Alok Mishra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Rishi Kumar", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" }
         ]
     },
     editorial: {
         title: "Editorial Team",
-        description: "Creative minds who craft compelling content and maintain our brand identity.",
+        description: "Content writing and editorial design.",
         members: [
-            {
-                name: "Sophie Martinez",
-                role: "Editorial Lead",
-                description: "Content strategist and writer creating engaging narratives for our community.",
-                skills: ["Writing", "Content Strategy", "Editing", "Branding"],
-                social: { linkedin: "#", twitter: "#", medium: "#" },
-                avatar: "fas fa-edit"
-            },
-            {
-                name: "Kevin Lee",
-                role: "Design Lead",
-                description: "Visual designer creating stunning graphics and maintaining brand consistency.",
-                skills: ["Graphic Design", "Illustrator", "Photoshop", "Branding"],
-                social: { behance: "#", instagram: "#", dribbble: "#" },
-                avatar: "fas fa-palette"
-            }
+            { name: "Daksh Bhasin", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Vamika Jaiswal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Bhumik a Joshi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Ashi Shrivastava", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Anvesha Pandey", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" }
         ]
     }
 };
@@ -277,6 +244,13 @@ function initializeTeamSlider() {
 
     if (!teamSlider || !teamModal) return;
 
+    // Start animation immediately to avoid initial lag and pause on hover
+    if (teamSlider) {
+        teamSlider.style.animationDelay = '0s';
+        // Force a reflow to ensure the animation starts without lag
+        void teamSlider.offsetWidth;
+    }
+
     // Pause rotation on hover
     teamSlider.addEventListener('mouseenter', function() {
         this.style.animationPlayState = 'paused';
@@ -393,8 +367,9 @@ function initializeNewsletter() {
 function initializeAnimations() {
     // Simple animation for cards when they come into view
     const cards = document.querySelectorAll('.content-card, .event-card');
+    const aboutPoints = document.querySelectorAll('.about-point');
     
-    if (cards.length === 0) return;
+    if (cards.length === 0 && aboutPoints.length === 0) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -411,6 +386,38 @@ function initializeAnimations() {
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(card);
     });
+
+    // Staggered reveal for about points (Who we are, What we do, etc.)
+    if (aboutPoints.length) {
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = Array.from(entry.target.querySelectorAll('.about-point'));
+                    items.forEach((item, index) => {
+                        // Ensure initial state before animating
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 120);
+                    });
+                    aboutObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        // Observe each grid container so we can stagger children on first reveal
+        document.querySelectorAll('.about-grid').forEach(grid => {
+            // Prepare children initial state
+            grid.querySelectorAll('.about-point').forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+            });
+            aboutObserver.observe(grid);
+        });
+    }
 }
 
 // Smooth scrolling for anchor links
