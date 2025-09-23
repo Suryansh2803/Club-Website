@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeSparkleEffect();
     hydrateUpcomingFromEventsPage();
+    initializeQuickNav();
 });
 
 // Navigation functionality
@@ -473,6 +474,25 @@ window.addEventListener('resize', function() {
         }
     }, 250);
 });
+// Quick navigation floating button for mobile
+function initializeQuickNav() {
+    const btn = document.getElementById('quickNavBtn');
+    const menu = document.getElementById('quickNavMenu');
+    if (!btn || !menu) return;
+
+    const toggle = () => {
+        const isOpen = menu.style.display === 'block';
+        menu.style.display = isOpen ? 'none' : 'block';
+    };
+    btn.addEventListener('click', toggle);
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && e.target !== btn) {
+            menu.style.display = 'none';
+        }
+    });
+}
 
 // Populate homepage footer upcoming events by scraping event cards on event.html
 function hydrateUpcomingFromEventsPage() {

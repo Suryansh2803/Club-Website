@@ -65,12 +65,12 @@
 
         <div class="events-container" id="ongoing-events" style="display: none;">
             <!-- Ongoing Events -->
-            <div class="event-card">
+            <div class="event-card tech-talk-card">
                 <div class="event-image">
-                    <img src="https://source.unsplash.com/random/600x400/?conference" alt="Tech talk 2.0">
-                    <div class="event-date">Ongoing</div>
+                    <img src="techtalk.jpg" alt="Tech Talk 2.0">
                 </div>
                 <div class="event-content">
+                    <div class="event-date">Ongoing</div>
                     <span class="event-status status-ongoing">ONGOING</span>
                     <h3 class="event-title">Tech talk 2.0</h3>
                     <p class="event-description">A continuing series of talks on cutting-edge technologies, trends, and careers in tech.</p>
@@ -269,22 +269,8 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
         // Tab functionality
         const tabBtns = document.querySelectorAll('.tab-btn');
         const upcomingEvents = document.getElementById('upcoming-events');
