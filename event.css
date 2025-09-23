@@ -13,6 +13,12 @@
             line-height: 1.5;
         }
 
+        /* Use SF Pro for all paragraphs on Events page */
+        p {
+            font-family: "SF Pro Text", "SF Pro Display", -apple-system, system-ui, BlinkMacSystemFont,
+                "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
         .font-orbitron {
             font-family: 'Orbitron', sans-serif;
         }

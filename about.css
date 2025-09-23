@@ -2,6 +2,12 @@
     min-height: 100vh;
 }
 
+/* Use SF Pro for all paragraphs on About page */
+p {
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, system-ui, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 /* Dimmed background logo for About page */
 .about-page {
     position: relative;

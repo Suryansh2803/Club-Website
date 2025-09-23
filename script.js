@@ -29,6 +29,8 @@ const teamData = {
         title: "Tech Team",
         description: "Developers and engineers driving technology initiatives.",
         members: [
+            { name: "Shiven", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Djvyam Srivastava", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
             { name: "Satyam Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
             { name: "Manya Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
             { name: "Tanishk Rastogi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
@@ -44,6 +46,8 @@ const teamData = {
         title: "Management Team",
         description: "Operations, planning, and coordination.",
         members: [
+            { name: "Aditya Mani Tripathi", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Avnish Awasthi", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Upendra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Siddharth Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Palak Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
@@ -59,6 +63,8 @@ const teamData = {
         title: "Social Media Team",
         description: "Digital presence and community engagement.",
         members: [
+            { name: "Rajeev Kushwaha", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Kriti Jadil", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
             { name: "Ananya Singhal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
             { name: "Anishkid", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
             { name: "Shruti Kesrawani", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
@@ -70,6 +76,8 @@ const teamData = {
         title: "PR Team",
         description: "Public relations and outreach.",
         members: [
+            { name: "Hardik Varshney", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Swasti Jaiswal", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
             { name: "Yash Sharma", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
             { name: "Akshita Dhingra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
             { name: "Nishit Tiwari", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
@@ -85,6 +93,8 @@ const teamData = {
         title: "Creative Team",
         description: "Design, visuals, and creative concepts.",
         members: [
+            { name: "Tarun Kaushik", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
+            { name: "Kartik Singhal", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
             { name: "Siddharth Jha", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
             { name: "Sachin Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
             { name: "Avishk Singh Shishodia", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
@@ -95,6 +105,8 @@ const teamData = {
         title: "DAM Team",
         description: "Data acquisition and management.",
         members: [
+            { name: "Lavanya Garg", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Mayank Chaurasia", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
             { name: "Rishi om Patidar", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
             { name: "Bhumi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
             { name: "Manjari Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
@@ -108,6 +120,8 @@ const teamData = {
         title: "Editorial Team",
         description: "Content writing and editorial design.",
         members: [
+            { name: "Kritika", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Avichal Pandey", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
             { name: "Daksh Bhasin", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
             { name: "Vamika Jaiswal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
             { name: "Bhumik a Joshi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
@@ -125,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNewsletter();
     initializeAnimations();
     initializeSparkleEffect();
+    hydrateUpcomingFromEventsPage();
 });
 
 // Navigation functionality
@@ -288,15 +303,18 @@ function initializeTeamSlider() {
         if (!team || !teamDetailBook) return;
 
         // Create book content
+        const leads = team.members.filter(m => /lead/i.test(m.role));
+        const others = team.members.filter(m => !/lead/i.test(m.role));
+
         const bookContent = `
             <div class="book-spine"></div>
             <div class="book-page left">
                 <h2 class="team-section-title">${team.title}</h2>
                 <p style="color: #d0d0d0; margin-bottom: 2rem; text-align: center;">${team.description}</p>
-                ${team.members.slice(0, Math.ceil(team.members.length / 2)).map(member => createMemberCard(member)).join('')}
+                ${leads.map(member => createMemberCard(member)).join('')}
             </div>
             <div class="book-page right">
-                ${team.members.slice(Math.ceil(team.members.length / 2)).map(member => createMemberCard(member)).join('')}
+                ${others.map(member => createMemberCard(member)).join('')}
             </div>
         `;
 
@@ -455,6 +473,59 @@ window.addEventListener('resize', function() {
         }
     }, 250);
 });
+
+// Populate homepage footer upcoming events by scraping event cards on event.html
+function hydrateUpcomingFromEventsPage() {
+    const upList = document.getElementById('footer-upcoming-list');
+    const onList = document.getElementById('footer-ongoing-list');
+    if (!upList || !onList) return;
+
+    fetch('event.html')
+        .then(r => r.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Collect Upcoming and Ongoing event cards
+            const upcoming = doc.querySelector('#upcoming-events');
+            const ongoing = doc.querySelector('#ongoing-events');
+
+            const itemsUpcoming = [];
+            const itemsOngoing = [];
+            function collect(container, bag) {
+                if (!container) return;
+                container.querySelectorAll('.event-card').forEach(card => {
+                    const title = card.querySelector('.event-title')?.textContent?.trim();
+                    const date = card.querySelector('.event-date')?.textContent?.trim();
+                    if (title) bag.push(`${title}${date ? ' - ' + date : ''}`);
+                });
+            }
+            collect(upcoming, itemsUpcoming);
+            collect(ongoing, itemsOngoing);
+
+            // Render lists
+            function render(target, arr) {
+                target.innerHTML = '';
+                const toShow = arr.slice(0, 6);
+                if (toShow.length === 0) {
+                    target.innerHTML = '<li><a href="event.html">See all events</a></li>';
+                    return;
+                }
+                toShow.forEach(text => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="event.html">${text}</a>`;
+                    target.appendChild(li);
+                });
+            }
+
+            render(upList, itemsUpcoming);
+            render(onList, itemsOngoing);
+        })
+        .catch(() => {
+            if (upList) upList.innerHTML = '<li><a href="event.html">See all events</a></li>';
+            if (onList) onList.innerHTML = '<li><a href="event.html">See all events</a></li>';
+        });
+}
 // Tab functionality
         const tabBtns = document.querySelectorAll('.tab-btn');
         const upcomingEvents = document.getElementById('upcoming-events');

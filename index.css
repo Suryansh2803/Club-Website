@@ -18,6 +18,12 @@ body {
     line-height: 1.5;
 }
 
+/* Use SF Pro for all paragraphs (headings remain with their own fonts) */
+p {
+    font-family: "SF Pro Text", "SF Pro Display", -apple-system, system-ui, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 .font-orbitron {
     font-family: 'Orbitron', sans-serif;
 }
@@ -1023,8 +1029,10 @@ h1 {
 
 .modal-content {
     position: relative;
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 95vw;
+    max-height: 92vh;
+    width: 95vw;
+    height: 92vh;
     background: transparent;
     border-radius: 20px;
     overflow: hidden;
@@ -1062,8 +1070,8 @@ h1 {
     box-shadow: 0 0 50px rgba(43,138,239,0.3);
     overflow: hidden;
     position: relative;
-    min-height: 500px;
-    max-height: 80vh;
+    min-height: 700px;
+    max-height: 88vh;
     overflow-y: auto;
 }
 
