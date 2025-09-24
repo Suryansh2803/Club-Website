@@ -7,22 +7,7 @@ const teamData = {
             { name: "Riya Batra", role: "President", description: "", skills: [], social: {}, avatar: "fas fa-crown" },
             { name: "Kunal Rohilla", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie" },
             { name: "Palak Bansal", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check" },
-            { name: "Jahan Aara", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" },
-            { name: "Hardik Varshney", role: "PR Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Swasti Jaiswal", role: "PR Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Tarun Kaushik", role: "Creative Head", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Kartik Singhal", role: "Creative Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Shiven", role: "Tech Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Djvyam Srivastava", role: "Tech Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Rajeev Kushwaha", role: "Social Media Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Kriti Jadil", role: "Social Media Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Lavanya Garg", role: "DAM Lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Mayank Chaurasia", role: "DAM Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Aditya Mani Tripathi", role: "Management Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Avnish Awasthi", role: "Management Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Kritika", role: "Editorial Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Avichal Pandey", role: "Editorial Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Zarrish Ma'am", role: "Faculty Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-chalkboard-teacher" }
+            { name: "Jahan Aara", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" }
         ]
     },
     technical: {
