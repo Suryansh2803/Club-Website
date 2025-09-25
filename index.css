@@ -1677,8 +1677,30 @@ footer::before {
     background: rgba(43,138,239,0.2);
 }
 
+/* Page Toggle Button */
+.page-toggle-btn {
+    position: fixed;
+    right: 1rem;
+    bottom: 4.75rem; /* just above quick nav */
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(43,138,239,0.35);
+    background: linear-gradient(135deg, rgba(255,107,107,0.25), rgba(43,138,239,0.25));
+    color: #fff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+}
+
+.page-toggle-btn i { font-size: 1.2rem; }
+
 @media (max-width: 768px) {
     .quick-nav-btn { display: flex; }
+    .page-toggle-btn { display: flex; }
 }
 .newsletter-input {
     padding: 0.8rem 1rem;
@@ -2208,6 +2230,7 @@ footer::before {
     nav { display: none !important; }
     .menu-toggle { display: none !important; }
     .quick-nav-btn { display: flex; }
+    .page-toggle-btn { display: flex; }
 }
 
 /* Extra small screens */

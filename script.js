@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSparkleEffect();
     hydrateUpcomingFromEventsPage();
     initializeQuickNav();
+    initializePageToggle();
 });
 
 // Navigation functionality
@@ -476,6 +477,26 @@ function initializeQuickNav() {
         if (!menu.contains(e.target) && e.target !== btn) {
             menu.style.display = 'none';
         }
+    });
+}
+
+// Floating Page Toggle (cycles through pages)
+function initializePageToggle() {
+    const btn = document.getElementById('pageToggleBtn');
+    if (!btn) return;
+    const pages = [
+        'index.html',
+        'about.html',
+        'team.html',
+        'event.html',
+        'contactUs.html'
+    ];
+    // Normalize current location to one of the pages (basename)
+    const path = window.location.pathname.replace(/\\/g, '/');
+    const current = pages.findIndex(p => path.endsWith('/' + p) || path.endsWith(p));
+    btn.addEventListener('click', () => {
+        const next = (current >= 0 ? current + 1 : 1) % pages.length;
+        window.location.href = pages[next];
     });
 }
 
