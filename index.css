@@ -523,6 +523,20 @@ nav a.active {
     opacity: 0.6;
 }
 
+/* Hide Spline branding badge in homepage hero */
+.hero-section spline-viewer::part(branding),
+.hero-section spline-viewer::part(logo),
+.hero-section spline-viewer::part(watermark) {
+    display: none !important;
+}
+
+/* Hide Spline branding badge on Team page */
+.team-page spline-viewer::part(branding),
+.team-page spline-viewer::part(logo),
+.team-page spline-viewer::part(watermark) {
+    display: none !important;
+}
+
 .content {
     max-width: 40rem;
     z-index: 999;
