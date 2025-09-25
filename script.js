@@ -15,7 +15,7 @@ const teamData = {
         description: "Developers and engineers driving technology initiatives.",
         members: [
             { name: "Shiven", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Djvyam Srivastava", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
+            { name: "Divyam Srivastava", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
             { name: "Satyam Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
             { name: "Manya Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
             { name: "Tanishk Rastogi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
