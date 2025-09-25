@@ -392,7 +392,7 @@
 /* Tech Elevate past event uses provided stage photo as background */
 .tech-elevate-card {
     position: relative;
-    background: url('tech-elevate.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
+    background: url('tech-elevate.jpeg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
     min-height: 360px;
 }
 .tech-elevate-card .event-image { display: none; }
@@ -413,7 +413,7 @@
 /* Toyota Hackathon past event background */
 .toyota-card {
     position: relative;
-    background: url('toyota-hackathon.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
+    background: url('Toyota.JPEG') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
     min-height: 360px;
 }
 .toyota-card .event-image { display: none; }
