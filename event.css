@@ -410,6 +410,27 @@
     font-size: 0.9rem;
 }
 
+/* Toyota Hackathon past event background */
+.toyota-card {
+    position: relative;
+    background: url('toyota-hackathon.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
+    min-height: 360px;
+}
+.toyota-card .event-image { display: none; }
+.toyota-card .event-content {
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.35));
+}
+.toyota-card .event-date {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
         .event-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(43,138,239,0.4);
