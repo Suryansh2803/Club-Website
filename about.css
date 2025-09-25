@@ -261,7 +261,7 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     overflow: visible;
-    transition: transform 0.6s ease, box-shadow 0.45s ease, background-size 0.9s ease-in-out;
+    transition: transform 0.6s ease, box-shadow 0.6s ease, background-size 2.2s cubic-bezier(0.22, 1, 0.36, 1);
     transform-origin: center center;
     will-change: transform, background-size, box-shadow;
     min-height: 420px; /* increase card height ~1.5x */
@@ -305,8 +305,8 @@ p {
 
 /* Hover effect: show only image, remove color overlay, zoom OUT image, add boundary glow */
 .mentor-card:hover {
-    /* gentler zoom */
-    background-size: 112%;
+    /* strong but smooth shrink: ~0.8x of 115% ≈ 92% */
+    background-size: 92%;
     transform: none;
     box-shadow: 0 0 0 2px rgba(43,138,239,0.6), 0 20px 50px rgba(43,138,239,0.35);
     border-color: rgba(43,138,239,0.6);
