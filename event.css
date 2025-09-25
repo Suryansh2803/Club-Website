@@ -345,6 +345,8 @@
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 10px 30px rgba(43,138,239,0.2);
             border: 2px solid rgba(43,138,239,0.2);
+            display: flex;
+            flex-direction: column;
         }
 
 /* Innoverse upcoming card uses provided neon logo as background and taller height */
@@ -451,6 +453,48 @@
             transition: transform 0.5s ease;
         }
 
+/* Supernova past event uses provided poster as background */
+.supernova-card {
+    position: relative;
+    background: url('Supernova.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
+    min-height: 360px;
+}
+.supernova-card .event-image { display: none; }
+.supernova-card .event-content {
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.35));
+}
+.supernova-card .event-date {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+/* IEEE ICPCT past event background */
+.icpct-card {
+    position: relative;
+    background: url('icpct.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
+    min-height: 360px;
+}
+.icpct-card .event-image { display: none; }
+.icpct-card .event-content {
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.35));
+}
+.icpct-card .event-date {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
         /* Make Tech Talk card use poster as full card background */
         .tech-talk-card {
             position: relative;
@@ -512,6 +556,7 @@
 
         .event-content {
             padding: 1.5rem;
+            margin-top: auto;
         }
 
         .event-title {
