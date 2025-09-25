@@ -43,23 +43,39 @@
             <h1 class="page-title">Our Team</h1>
             <p class="page-subtitle">Meet the brilliant minds behind Abhyudaya Club</p>
 
+            <!-- Core Team Section (separate from 3D slider) -->
+            <div class="content-card core-team-section">
+                <h3 class="card-title">Core Team</h3>
+                <div class="core-grid">
+                    <div class="core-card lead">
+                        <div class="core-avatar"><i class="fas fa-crown"></i></div>
+                        <div class="core-name">Riya Batra</div>
+                        <div class="core-role">President</div>
+                    </div>
+                    <div class="core-card co-lead">
+                        <div class="core-avatar"><i class="fas fa-user-tie"></i></div>
+                        <div class="core-name">Kunal Rohilla</div>
+                        <div class="core-role">Vice President</div>
+                    </div>
+                    <div class="core-card member">
+                        <div class="core-avatar"><i class="fas fa-key"></i></div>
+                        <div class="core-name">Jahan Aara</div>
+                        <div class="core-role">Secretary</div>
+                    </div>
+                    <div class="core-card member">
+                        <div class="core-avatar"><i class="fas fa-user-check"></i></div>
+                        <div class="core-name">Palak Bansal</div>
+                        <div class="core-role">Student Coordinator</div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 3D Team Slider -->
             <div class="team-slider-container">
                 <div class="slider-wrapper">
-                    <div class="team-slider" id="teamSlider">
-                        <!-- Core Team Card -->
-                        <div class="team-card" data-team="core">
-                            <div class="card-front">
-                                <div class="card-icon">
-                                    <i class="fas fa-crown"></i>
-                                </div>
-                                <h3 class="card-title">Core</h3>
-                                <p class="card-subtitle">Leadership Council</p>
-                            </div>
-                        </div>
-
+                    <div class="team-slider" id="teamSlider" aria-label="Team categories carousel" role="list">
                         <!-- Technical Team Card -->
-                        <div class="team-card" data-team="technical">
+                        <div class="team-card" data-team="technical" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-code"></i>
@@ -70,7 +86,7 @@
                         </div>
 
                         <!-- Management Team Card -->
-                        <div class="team-card" data-team="management">
+                        <div class="team-card" data-team="management" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-users-cog"></i>
@@ -81,7 +97,7 @@
                         </div>
 
                         <!-- Social Media Team Card -->
-                        <div class="team-card" data-team="social">
+                        <div class="team-card" data-team="social" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-share-alt"></i>
@@ -92,7 +108,7 @@
                         </div>
 
                         <!-- Creative Team Card -->
-                        <div class="team-card" data-team="creative">
+                        <div class="team-card" data-team="creative" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-lightbulb"></i>
@@ -103,7 +119,7 @@
                         </div>
 
                         <!-- PR Team Card -->
-                        <div class="team-card" data-team="pr">
+                        <div class="team-card" data-team="pr" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-bullhorn"></i>
@@ -114,7 +130,7 @@
                         </div>
 
                         <!-- DAM Team Card -->
-                        <div class="team-card" data-team="dam">
+                        <div class="team-card" data-team="dam" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-database"></i>
@@ -125,7 +141,72 @@
                         </div>
 
                         <!-- Editorial Team Card -->
-                        <div class="team-card" data-team="editorial">
+                        <div class="team-card" data-team="editorial" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h3 class="card-title">Editorial</h3>
+                                <p class="card-subtitle">Content & Design</p>
+                            </div>
+                        </div>
+
+                        <!-- DUPLICATE SET FOR SEAMLESS TRAIN SCROLL -->
+                        <div class="team-card" data-team="technical" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3 class="card-title">Technical</h3>
+                                <p class="card-subtitle">Development & Innovation</p>
+                            </div>
+                        </div>
+                        <div class="team-card" data-team="management" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <h3 class="card-title">Management</h3>
+                                <p class="card-subtitle">Leadership & Strategy</p>
+                            </div>
+                        </div>
+                        <div class="team-card" data-team="social" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-share-alt"></i>
+                                </div>
+                                <h3 class="card-title">Social Media</h3>
+                                <p class="card-subtitle">Digital Presence</p>
+                            </div>
+                        </div>
+                        <div class="team-card" data-team="creative" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3 class="card-title">Creative</h3>
+                                <p class="card-subtitle">Design & Visuals</p>
+                            </div>
+                        </div>
+                        <div class="team-card" data-team="pr" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <h3 class="card-title">PR</h3>
+                                <p class="card-subtitle">Public Relations</p>
+                            </div>
+                        </div>
+                        <div class="team-card" data-team="dam" role="listitem">
+                            <div class="card-front">
+                                <div class="card-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h3 class="card-title">DAM</h3>
+                                <p class="card-subtitle">Data & Analytics</p>
+                            </div>
+                        </div>
+                        <div class="team-card" data-team="editorial" role="listitem">
                             <div class="card-front">
                                 <div class="card-icon">
                                     <i class="fas fa-edit"></i>

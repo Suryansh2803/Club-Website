@@ -245,14 +245,12 @@ function initializeTeamSlider() {
 
     if (!teamSlider || !teamModal) return;
 
-    // Start animation immediately to avoid initial lag and pause on hover
+    // Start horizontal train animation and allow pause on hover
     if (teamSlider) {
         teamSlider.style.animationDelay = '0s';
-        // Force a reflow to ensure the animation starts without lag
-        void teamSlider.offsetWidth;
+        void teamSlider.offsetWidth; // reflow
     }
 
-    // Pause rotation on hover
     teamSlider.addEventListener('mouseenter', function() {
         this.style.animationPlayState = 'paused';
     });
@@ -855,3 +853,860 @@ function initializeSparkleEffect() {
     window.addEventListener('beforeunload', cleanup);
 }
  
+
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: 'smooth',
+
+                block: 'start'
+
+            });
+
+        }
+
+    });
+
+});
+
+
+
+// Add loading animation
+
+window.addEventListener('load', function() {
+
+    document.body.classList.add('loaded');
+
+});
+
+
+
+// Handle window resize for responsive adjustments
+
+let resizeTimeout;
+
+window.addEventListener('resize', function() {
+
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function() {
+
+        // Recalculate any size-dependent elements if needed
+
+        const teamSlider = document.getElementById('teamSlider');
+
+        if (teamSlider) {
+
+            // Force reflow to ensure proper rendering
+
+            teamSlider.style.animationPlayState = 'paused';
+
+            setTimeout(() => {
+
+                teamSlider.style.animationPlayState = 'running';
+
+            }, 10);
+
+        }
+
+    }, 250);
+
+});
+
+// Quick navigation floating button for mobile
+
+function initializeQuickNav() {
+
+    const btn = document.getElementById('quickNavBtn');
+
+    const menu = document.getElementById('quickNavMenu');
+
+    if (!btn || !menu) return;
+
+
+
+    const toggle = () => {
+
+        const isOpen = menu.style.display === 'block';
+
+        menu.style.display = isOpen ? 'none' : 'block';
+
+    };
+
+    btn.addEventListener('click', toggle);
+
+
+
+    // Close when clicking outside
+
+    document.addEventListener('click', (e) => {
+
+        if (!menu.contains(e.target) && e.target !== btn) {
+
+            menu.style.display = 'none';
+
+        }
+
+    });
+
+}
+
+
+
+// Populate homepage footer upcoming events by scraping event cards on event.html
+
+function hydrateUpcomingFromEventsPage() {
+
+    const upList = document.getElementById('footer-upcoming-list');
+
+    const onList = document.getElementById('footer-ongoing-list');
+
+    if (!upList || !onList) return;
+
+
+
+    fetch('event.html')
+
+        .then(r => r.text())
+
+        .then(html => {
+
+            const parser = new DOMParser();
+
+            const doc = parser.parseFromString(html, 'text/html');
+
+
+
+            // Collect Upcoming and Ongoing event cards
+
+            const upcoming = doc.querySelector('#upcoming-events');
+
+            const ongoing = doc.querySelector('#ongoing-events');
+
+
+
+            const itemsUpcoming = [];
+
+            const itemsOngoing = [];
+
+            function collect(container, bag) {
+
+                if (!container) return;
+
+                container.querySelectorAll('.event-card').forEach(card => {
+
+                    const title = card.querySelector('.event-title')?.textContent?.trim();
+
+                    const date = card.querySelector('.event-date')?.textContent?.trim();
+
+                    if (title) bag.push(`${title}${date ? ' - ' + date : ''}`);
+
+                });
+
+            }
+
+            collect(upcoming, itemsUpcoming);
+
+            collect(ongoing, itemsOngoing);
+
+
+
+            // Render lists
+
+            function render(target, arr) {
+
+                target.innerHTML = '';
+
+                const toShow = arr.slice(0, 6);
+
+                if (toShow.length === 0) {
+
+                    target.innerHTML = '<li><a href="event.html">See all events</a></li>';
+
+                    return;
+
+                }
+
+                toShow.forEach(text => {
+
+                    const li = document.createElement('li');
+
+                    li.innerHTML = `<a href="event.html">${text}</a>`;
+
+                    target.appendChild(li);
+
+                });
+
+            }
+
+
+
+            render(upList, itemsUpcoming);
+
+            render(onList, itemsOngoing);
+
+        })
+
+        .catch(() => {
+
+            if (upList) upList.innerHTML = '<li><a href="event.html">See all events</a></li>';
+
+            if (onList) onList.innerHTML = '<li><a href="event.html">See all events</a></li>';
+
+        });
+
+}
+
+// Tab functionality
+
+        const tabBtns = document.querySelectorAll('.tab-btn');
+
+        const upcomingEvents = document.getElementById('upcoming-events');
+
+        const ongoingEvents = document.getElementById('ongoing-events');
+
+        const pastEvents = document.getElementById('past-events');
+
+        
+
+        tabBtns.forEach(btn => {
+
+            btn.addEventListener('click', () => {
+
+                // Remove active class from all buttons
+
+                tabBtns.forEach(b => b.classList.remove('active'));
+
+                // Add active class to clicked button
+
+                btn.classList.add('active');
+
+                
+
+                // Show the corresponding events section
+
+                const tab = btn.getAttribute('data-tab');
+
+                
+
+                upcomingEvents.style.display = 'none';
+
+                ongoingEvents.style.display = 'none';
+
+                pastEvents.style.display = 'none';
+
+                
+
+                if (tab === 'upcoming') {
+
+                    upcomingEvents.style.display = 'grid';
+
+                } else if (tab === 'ongoing') {
+
+                    ongoingEvents.style.display = 'grid';
+
+                } else if (tab === 'past') {
+
+                    pastEvents.style.display = 'grid';
+
+                }
+
+            });
+
+        });
+
+        
+
+        // Gallery modal functionality
+
+        const galleryModal = document.getElementById('galleryModal');
+
+        const closeModal = document.getElementById('closeModal');
+
+        const modalTitle = document.getElementById('modalTitle');
+
+        const galleryGrid = document.getElementById('galleryGrid');
+
+        const registrationForm = document.getElementById('registrationForm');
+
+        
+
+        // Sample gallery images (in a real scenario, these would be specific to each event)
+
+        const galleryImages = [
+
+            'https://source.unsplash.com/random/600x400/?event,1',
+
+            'https://source.unsplash.com/random/600x400/?event,2',
+
+            'https://source.unsplash.com/random/600x400/?event,3',
+
+            'https://source.unsplash.com/random/600x400/?event,4',
+
+            'https://source.unsplash.com/random/600x400/?event,5',
+
+            'https://source.unsplash.com/random/600x400/?event,6'
+
+        ];
+
+        
+
+        // Function to open gallery
+
+        function openGallery(eventTitle, isPastEvent) {
+
+            modalTitle.textContent = `${eventTitle} - Gallery`;
+
+            
+
+            // Clear previous gallery images
+
+            galleryGrid.innerHTML = '';
+
+            
+
+            // Add images to gallery
+
+            galleryImages.forEach(imgSrc => {
+
+                const galleryItem = document.createElement('div');
+
+                galleryItem.className = 'gallery-item';
+
+                galleryItem.innerHTML = `<img src="${imgSrc}" alt="${eventTitle}">`;
+
+                galleryGrid.appendChild(galleryItem);
+
+            });
+
+            
+
+            // Show/hide registration form based on whether event is past
+
+            registrationForm.style.display = isPastEvent ? 'none' : 'block';
+
+            
+
+            // Show modal
+
+            galleryModal.classList.add('active');
+
+        }
+
+        
+
+        // Close modal
+
+        closeModal.addEventListener('click', () => {
+
+            galleryModal.classList.remove('active');
+
+        });
+
+        
+
+        // Close modal when clicking outside
+
+        galleryModal.addEventListener('click', (e) => {
+
+            if (e.target === galleryModal) {
+
+                galleryModal.classList.remove('active');
+
+            }
+
+        });
+
+        
+
+        // Add event listeners to gallery buttons
+
+        document.querySelectorAll('.btn-view-gallery').forEach(btn => {
+
+            btn.addEventListener('click', (e) => {
+
+                const eventCard = e.target.closest('.event-card');
+
+                const eventTitle = eventCard.querySelector('.event-title').textContent;
+
+                const isPastEvent = eventCard.querySelector('.event-status').classList.contains('status-past');
+
+                openGallery(eventTitle, isPastEvent);
+
+            });
+
+        });
+
+        
+
+        // Add event listeners to register buttons
+
+        document.querySelectorAll('.btn-register').forEach(btn => {
+
+            if (!btn.disabled) {
+
+                btn.addEventListener('click', (e) => {
+
+                    const eventCard = e.target.closest('.event-card');
+
+                    const eventTitle = eventCard.querySelector('.event-title').textContent;
+
+                    modalTitle.textContent = `Register for ${eventTitle}`;
+
+                    
+
+                    // Clear gallery and hide it
+
+                    galleryGrid.innerHTML = '';
+
+                    galleryGrid.style.display = 'none';
+
+                    
+
+                    // Show registration form
+
+                    registrationForm.style.display = 'block';
+
+                    
+
+                    // Show modal
+
+                    galleryModal.classList.add('active');
+
+                });
+
+            }
+
+        });
+
+
+
+        // Form submission handling
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            
+
+            // Get form values
+
+            const name = document.getElementById('name').value;
+
+            const email = document.getElementById('email').value;
+
+            const subject = document.getElementById('subject').value;
+
+            const message = document.getElementById('message').value;
+
+            
+
+            // In a real application, you would send this data to a server
+
+            // For this example, we'll just show an alert
+
+            alert(`Thank you, ${name}! Your message has been received. We will get back to you at ${email} soon.`);
+
+            
+
+            // Reset the form
+
+            document.getElementById('contactForm').reset();
+
+        });
+
+
+
+        // Simple animation for elements when they come into view
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const cards = document.querySelectorAll('.contact-card');
+
+            
+
+            cards.forEach(card => {
+
+                card.style.opacity = '0';
+
+                card.style.transform = 'translateY(20px)';
+
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+            });
+
+            
+
+            setTimeout(() => {
+
+                cards.forEach((card, index) => {
+
+                    setTimeout(() => {
+
+                        card.style.opacity = '1';
+
+                        card.style.transform = 'translateY(0)';
+
+                    }, 100 * index);
+
+                });
+
+            }, 500);
+
+        });
+
+
+
+// Sparkle cursor effect for hero section
+
+function initializeSparkleEffect() {
+
+    const heroSection = document.querySelector('.hero-section');
+
+    if (!heroSection) return;
+
+
+
+    let customCursor = null;
+
+    let sparkleCount = 0;
+
+    const maxSparkles = 50; // Limit number of sparkles for performance
+
+    let isMouseMoving = false;
+
+    let mouseMoveTimeout;
+
+
+
+    // Create custom cursor
+
+    function createCustomCursor() {
+
+        customCursor = document.createElement('div');
+
+        customCursor.className = 'custom-cursor';
+
+        document.body.appendChild(customCursor);
+
+    }
+
+
+
+    // Create sparkle at cursor position
+
+    function createSparkle(x, y, type = 'normal') {
+
+        if (sparkleCount >= maxSparkles) return;
+
+
+
+        const sparkle = document.createElement('div');
+
+        sparkle.className = `sparkle ${type}`;
+
+        
+
+        // Randomize sparkle properties
+
+        const size = Math.random() * 6 + 2; // 2-8px
+
+        const delay = Math.random() * 0.3; // 0-0.3s delay
+
+        const duration = type === 'burst' ? 1.2 : (Math.random() * 0.5 + 0.8); // 0.8-1.3s duration
+
+        
+
+        sparkle.style.left = x + 'px';
+
+        sparkle.style.top = y + 'px';
+
+        sparkle.style.width = size + 'px';
+
+        sparkle.style.height = size + 'px';
+
+        sparkle.style.animationDelay = delay + 's';
+
+        sparkle.style.animationDuration = duration + 's';
+
+        
+
+        // Randomize colors
+
+        const colors = [
+
+            'radial-gradient(circle, #ffffff 0%, #2b8aef 50%, transparent 100%)',
+
+            'radial-gradient(circle, #ffffff 0%, #ff6b6b 50%, transparent 100%)',
+
+            'radial-gradient(circle, #ffffff 0%, #4ecdc4 50%, transparent 100%)',
+
+            'radial-gradient(circle, #ffffff 0%, #ffd166 50%, transparent 100%)'
+
+        ];
+
+        sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        
+
+        heroSection.appendChild(sparkle);
+
+        sparkleCount++;
+
+
+
+        // Remove sparkle after animation
+
+        setTimeout(() => {
+
+            if (sparkle.parentNode) {
+
+                sparkle.parentNode.removeChild(sparkle);
+
+                sparkleCount--;
+
+            }
+
+        }, (duration + delay) * 1000);
+
+    }
+
+
+
+    // Create trail effect
+
+    function createTrail(x, y) {
+
+        const trail = document.createElement('div');
+
+        trail.className = 'sparkle-trail';
+
+        trail.style.left = x + 'px';
+
+        trail.style.top = y + 'px';
+
+        
+
+        heroSection.appendChild(trail);
+
+        
+
+        setTimeout(() => {
+
+            if (trail.parentNode) {
+
+                trail.parentNode.removeChild(trail);
+
+            }
+
+        }, 500);
+
+    }
+
+
+
+    // Mouse move handler
+
+    function handleMouseMove(e) {
+
+        if (!isMouseMoving) {
+
+            isMouseMoving = true;
+
+            createCustomCursor();
+
+        }
+
+
+
+        // Update custom cursor position
+
+        if (customCursor) {
+
+            customCursor.style.left = e.clientX - 10 + 'px';
+
+            customCursor.style.top = e.clientY - 10 + 'px';
+
+        }
+
+
+
+        // Create sparkles with some randomness
+
+        if (Math.random() < 0.3) { // 30% chance to create sparkle
+
+            const offsetX = (Math.random() - 0.5) * 20;
+
+            const offsetY = (Math.random() - 0.5) * 20;
+
+            createSparkle(e.clientX + offsetX, e.clientY + offsetY, 'trail');
+
+        }
+
+
+
+        // Create trail effect occasionally
+
+        if (Math.random() < 0.1) { // 10% chance to create trail
+
+            createTrail(e.clientX, e.clientY);
+
+        }
+
+
+
+        // Clear timeout and set new one
+
+        clearTimeout(mouseMoveTimeout);
+
+        mouseMoveTimeout = setTimeout(() => {
+
+            isMouseMoving = false;
+
+            if (customCursor && customCursor.parentNode) {
+
+                customCursor.parentNode.removeChild(customCursor);
+
+                customCursor = null;
+
+            }
+
+        }, 1000);
+
+    }
+
+
+
+    // Mouse enter handler
+
+    function handleMouseEnter() {
+
+        document.body.style.cursor = 'none';
+
+    }
+
+
+
+    // Mouse leave handler
+
+    function handleMouseLeave() {
+
+        document.body.style.cursor = 'auto';
+
+        if (customCursor && customCursor.parentNode) {
+
+            customCursor.parentNode.removeChild(customCursor);
+
+            customCursor = null;
+
+        }
+
+        isMouseMoving = false;
+
+    }
+
+
+
+    // Click handler for burst effect
+
+    function handleClick(e) {
+
+        // Create a burst of sparkles on click
+
+        for (let i = 0; i < 8; i++) {
+
+            const angle = (i / 8) * Math.PI * 2;
+
+            const distance = Math.random() * 30 + 20;
+
+            const x = e.clientX + Math.cos(angle) * distance;
+
+            const y = e.clientY + Math.sin(angle) * distance;
+
+            createSparkle(x, y, 'burst');
+
+        }
+
+        
+
+        // Create additional sparkles at click point
+
+        for (let i = 0; i < 3; i++) {
+
+            const offsetX = (Math.random() - 0.5) * 15;
+
+            const offsetY = (Math.random() - 0.5) * 15;
+
+            createSparkle(e.clientX + offsetX, e.clientY + offsetY, 'burst');
+
+        }
+
+    }
+
+
+
+    // Add event listeners
+
+    heroSection.addEventListener('mousemove', handleMouseMove);
+
+    heroSection.addEventListener('mouseenter', handleMouseEnter);
+
+    heroSection.addEventListener('mouseleave', handleMouseLeave);
+
+    heroSection.addEventListener('click', handleClick);
+
+
+
+    // Cleanup function
+
+    function cleanup() {
+
+        heroSection.removeEventListener('mousemove', handleMouseMove);
+
+        heroSection.removeEventListener('mouseenter', handleMouseEnter);
+
+        heroSection.removeEventListener('mouseleave', handleMouseLeave);
+
+        heroSection.removeEventListener('click', handleClick);
+
+        
+
+        if (customCursor && customCursor.parentNode) {
+
+            customCursor.parentNode.removeChild(customCursor);
+
+        }
+
+        
+
+        // Remove all sparkles
+
+        const sparkles = heroSection.querySelectorAll('.sparkle');
+
+        sparkles.forEach(sparkle => {
+
+            if (sparkle.parentNode) {
+
+                sparkle.parentNode.removeChild(sparkle);
+
+            }
+
+        });
+
+    }
+
+
+
+    // Cleanup on page unload
+
+    window.addEventListener('beforeunload', cleanup);
+
+}
+
+ 
+
+
