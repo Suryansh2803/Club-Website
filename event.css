@@ -371,7 +371,7 @@
         .tech-talk-card {
             position: relative;
             background: url('techtalk.jpg') center/cover no-repeat;
-            min-height: 280px;
+            min-height: 360px; /* make card larger like upcoming */
         }
         .tech-talk-card .event-image { display: none; }
         .tech-talk-card .event-content {
