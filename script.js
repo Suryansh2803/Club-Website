@@ -38,8 +38,8 @@ const teamData = {
             { name: "Palak Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Divyansh Srivastav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Jai thawal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Unayan Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Anushka Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Unnayan Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Anushika Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Kinjal Rajput", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
             { name: "Aayush Chauhan", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" }
         ]
