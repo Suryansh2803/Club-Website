@@ -110,6 +110,9 @@ p {
     padding: 1.2rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* move text to bottom */
 }
 
 .person-card:hover {
@@ -130,11 +133,13 @@ p {
     margin: 0.2rem 0 0.5rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    font-weight: 700; /* bold */
 }
 
 .person-text {
     color: #d0d0d0;
     font-size: 0.9rem;
+    font-weight: 700; /* bold */
 }
 
 /* Beautiful Founders & Mentors Section */
