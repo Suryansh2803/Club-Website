@@ -477,7 +477,7 @@
 /* IEEE ICPCT past event background */
 .icpct-card {
     position: relative;
-    background: url('icpct.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
+    background: url('ICPCT.jpg') center/cover no-repeat, linear-gradient(135deg, rgba(30, 15, 50, 0.9), rgba(60, 25, 90, 0.9));
     min-height: 360px;
 }
 .icpct-card .event-image { display: none; }
