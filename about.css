@@ -241,6 +241,20 @@ p {
     min-height: 420px; /* ~1.5x card height */
 }
 
+/* Dim overlay for founders to improve text contrast */
+.founder-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 0;
+    pointer-events: none;
+}
+.founder-card > * { position: relative; z-index: 1; }
+
+/* On hover, remove dark overlay so image is unchanged */
+.founder-card:hover::after { background: transparent; }
+
 /* Override gradient with founder images (place AFTER .founder-card) */
 .founder-card.founder-yash-joshi { background-image: url('yash joshi.jpeg'); background-size: cover; background-position: center; }
 .founder-card.founder-jhilmil-aggarwal { background-image: url('jhilmil aggrwal.jpeg'); background-size: cover; background-position: center; }
@@ -417,7 +431,7 @@ p {
     color: #fff;
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 800; /* bolder for better prominence */
 }
 
 .person-role {

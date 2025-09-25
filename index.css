@@ -898,6 +898,40 @@ h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* Add a dim overlay on core cards when background image present */
+.core-riya-batra::after,
+.core-kunal-rohilla::after,
+.core-jahan-aara::after,
+.core-palak-bansal::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.core-card.core-riya-batra,
+.core-card.core-kunal-rohilla,
+.core-card.core-jahan-aara,
+.core-card.core-palak-bansal {
+    position: relative;
+}
+
+/* On hover, keep image unchanged (remove dark overlay) */
+.core-riya-batra:hover::after,
+.core-kunal-rohilla:hover::after,
+.core-jahan-aara:hover::after,
+.core-palak-bansal:hover::after {
+    background: transparent;
+}
+
+/* Ensure text sits above the dim overlay */
+.core-card > * {
+    position: relative;
+    z-index: 1;
+}
+
 /* Core member backgrounds (use same filenames in folder) */
 .core-riya-batra { background: url('riya batra.jpeg') center/cover no-repeat; background-position: center 35%; }
 .core-kunal-rohilla { background: url('Kunal Rohilla.jpg') center/cover no-repeat; }
@@ -945,8 +979,9 @@ h1 {
 .core-name {
     font-family: 'Orbitron', sans-serif;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-bottom: 0.25rem;
+    font-weight: 800; /* bolder name */
 }
 
 .core-role {
