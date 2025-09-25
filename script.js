@@ -601,12 +601,10 @@ function hydrateUpcomingFromEventsPage() {
         // Manifest mapping normalized event names to their image filenames (relative to Photos/)
         const galleryManifest = {
             'ieee-icpct': [
-                
                 'IMG_3930.JPG',
                 'IMG_3934.JPG',
                 'IMG_3947.JPG',
                 'IMG_3950.JPG'
-                
             ],
             'love-babber': [
                 '460800669_900079045299409_4486431011803309100_n.webp.jpg',
@@ -651,10 +649,12 @@ function hydrateUpcomingFromEventsPage() {
                 'IMG_2986.JPG',
                 'IMG_3353.JPG',
                 'IMG_3506 (1).JPG',
-                'IMG_3508.JPG'
-                // ...add more as needed
+                'IMG_3508.JPG',
+                'IMG_3516.JPG',
+                'IMG_3517.JPG',
+                'IMG_3525.JPG',
+                'PXL_20250117_082753145.RAW-01.COVER.jpg'
             ]
-            // Add more events as needed
         };
         
         // Function to open gallery
@@ -667,7 +667,16 @@ function hydrateUpcomingFromEventsPage() {
             const normalizedKey = normalizeEventTitle(eventTitle);
             const images = galleryManifest[normalizedKey] || [];
             if (images.length > 0) {
-                const folderPath = `Photos/${normalizedKey}/`;
+                // Map normalized keys to actual folder names
+                const folderMapping = {
+                    'ieee-icpct': 'IEEE ICPCT',
+                    'love-babber': 'Love babber',
+                    'supernova': 'Supernova',
+                    'tech-elevate': 'Tech elevate',
+                    'toyota-hackathon': 'Toyota Hackathon'
+                };
+                const actualFolderName = folderMapping[normalizedKey] || normalizedKey;
+                const folderPath = `Photos/${actualFolderName}/`;
                 images.forEach(filename => {
                     const imgSrc = folderPath + filename;
                     const ext = filename.split('.').pop().toLowerCase();
