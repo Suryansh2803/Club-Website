@@ -262,10 +262,10 @@ p {
 
 /* Override gradient with founder images (place AFTER .founder-card) */
 .founder-card.founder-yash-joshi { background-image: url('yash joshi.jpeg'); background-size: cover; background-position: center; }
-.founder-card.founder-jhilmil-aggarwal { background-image: url('jhilmil aggrwal.jpeg'); background-size: cover; background-position: center; }
-.founder-card.founder-pradyuman-chauhan { background-image: url('pradyuman chauhan.jpeg'); background-size: cover; background-position: center; }
+.founder-card.founder-jhilmil-aggarwal { background-image: url('jhilmil aggrwal.jpeg'); background-size: cover; background-position: center 35%; }
+.founder-card.founder-pradyuman-chauhan { background-image: url('pradyuman chauhan.jpeg'); background-size: cover; background-position: center 70%; }
 .founder-card.founder-anushka-chaurasia { background-image: url('anushka chaurasia.jpeg'); background-size: cover; background-position: center; }
-.founder-card.founder-vansh-chauhan { background-image: url('vansh rajput.jpeg'); background-size: cover; background-position: center; }
+.founder-card.founder-vansh-chauhan { background-image: url('vansh rajput.jpeg'); background-size: cover; background-position: center 35%; }
 
 /* Hide avatar when using background photo */
 .founder-card.founder-yash-joshi .member-avatar,
@@ -301,18 +301,18 @@ p {
 
 .mentor-santosh {
     background-image: url('santosh.jpeg');
-    background-position: center 30%;
+    background-position: center 20%;
 }
 
 .mentor-attiuttama {
     background-image: url('attiuttama.jpeg');
-    background-position: center 20%;
+    background-position: center 12%;
 }
 
 /* Zarrish background and hide circle avatar */
 .mentor-zarrish {
     background-image: url('zarrish.png');
-    background-position: center 28%;
+    background-position: center 18%;
 }
 .mentor-zarrish .member-avatar { display: none; }
 

@@ -937,9 +937,9 @@ h1 {
 
 /* Core member backgrounds (use same filenames in folder) */
 .core-riya-batra { background: url('riya batra.jpeg') center/cover no-repeat; background-position: center 35%; }
-.core-kunal-rohilla { background: url('Kunal Rohilla.jpg') center/cover no-repeat; }
+.core-kunal-rohilla { background: url('Kunal Rohilla.jpg') center/cover no-repeat; background-position: center 35%; }
 .core-jahan-aara { background: url('jaha araa.jpeg') center/cover no-repeat; background-position: center 35%; }
-.core-palak-bansal { background: url('palak.jpg') center/cover no-repeat; background-position: center 70%; }
+.core-palak-bansal { background: url('palak.jpg') center/cover no-repeat; background-position: center 40%; }
 
 /* Hide circle avatar when background is present */
 .core-riya-batra .core-avatar,
