@@ -592,13 +592,15 @@ function hydrateUpcomingFromEventsPage() {
 
         // Manifest mapping event names to their image filenames (relative to Photos/)
         // Helper to normalize event titles for manifest keys
+
+        // Normalize event title: lowercase, trim, replace spaces with dashes
         function normalizeEventTitle(title) {
-            return title.trim().toLowerCase().replace(/\s+/g, ' ');
+            return title.trim().toLowerCase().replace(/\s+/g, '-');
         }
 
         // Manifest mapping normalized event names to their image filenames (relative to Photos/)
         const galleryManifest = {
-            [normalizeEventTitle('IEEE ICPCT')]: [
+            'ieee-icpct': [
                 
                 'IMG_3930.JPG',
                 'IMG_3934.JPG',
@@ -606,7 +608,7 @@ function hydrateUpcomingFromEventsPage() {
                 'IMG_3950.JPG'
                 
             ],
-            [normalizeEventTitle('Love babber')]: [
+            'love-babber': [
                 '460800669_900079045299409_4486431011803309100_n.webp.jpg',
                 '460843589_801008911972855_5144800258403651627_n.webp.jpg',
                 '460844863_1245005269775289_3765632684257513860_n.webp.jpg',
@@ -618,7 +620,7 @@ function hydrateUpcomingFromEventsPage() {
                 '461062633_3741464239501207_2510399301290970497_n.webp.jpg',
                 '461063098_2282956892044546_18067509712876813_n.webp.jpg'
             ],
-            [normalizeEventTitle('Supernova')]: [
+            'supernova': [
                 'WhatsApp Image 2025-09-25 at 21.59.33_1ed366a1.jpg',
                 'WhatsApp Image 2025-09-25 at 21.59.33_afb19fec.jpg',
                 'WhatsApp Image 2025-09-25 at 21.59.34_40676275.jpg',
@@ -628,7 +630,7 @@ function hydrateUpcomingFromEventsPage() {
                 'WhatsApp Image 2025-09-25 at 21.59.36_8f2eb707.jpg',
                 'WhatsApp Image 2025-09-25 at 21.59.36_bf61d21d.jpg'
             ],
-            [normalizeEventTitle('Tech elevate')]: [
+            'tech-elevate': [
                 'get (10).jpeg',
                 'get (11).jpeg',
                 'get (12).jpeg',
@@ -643,7 +645,7 @@ function hydrateUpcomingFromEventsPage() {
                 'get (21).jpeg',
                 'get (22).jpeg'
             ],
-            [normalizeEventTitle('Toyota Hackathon')]: [
+            'toyota-hackathon': [
                 'IMG_2503.JPEG',
                 'IMG_2505.JPEG',
                 'IMG_2986.JPG',
@@ -662,9 +664,10 @@ function hydrateUpcomingFromEventsPage() {
             galleryGrid.innerHTML = '';
 
             // Use manifest to get images for this event
-            const images = galleryManifest[normalizeEventTitle(eventTitle)] || [];
+            const normalizedKey = normalizeEventTitle(eventTitle);
+            const images = galleryManifest[normalizedKey] || [];
             if (images.length > 0) {
-                const folderPath = `Photos/${eventTitle}/`;
+                const folderPath = `Photos/${normalizedKey}/`;
                 images.forEach(filename => {
                     const imgSrc = folderPath + filename;
                     const ext = filename.split('.').pop().toLowerCase();
