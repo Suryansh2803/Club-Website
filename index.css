@@ -622,12 +622,12 @@ h1 {
 }
 
 .description {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     letter-spacing: 0.05em;
     max-width: 35rem;
     color: gray;
     font-family: Montserrat, sans-serif;
-    font-weight:700;
+    font-weight:900;
 }
 
 .buttons {
@@ -2197,6 +2197,17 @@ footer::before {
     .hero-background {
         opacity: 0.1;
     }
+
+    /* Hide navbar and hamburger on mobile; use quick-nav instead */
+    nav { display: none !important; }
+    .menu-toggle { display: none !important; }
+}
+
+/* Extend quick-nav behavior to tablets */
+@media (max-width: 1024px) {
+    nav { display: none !important; }
+    .menu-toggle { display: none !important; }
+    .quick-nav-btn { display: flex; }
 }
 
 /* Extra small screens */

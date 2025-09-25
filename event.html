@@ -55,7 +55,9 @@
                     <span class="event-status status-upcoming">UPCOMING</span>
                     <h3 class="event-title">Inno verse idea 2.0</h3>
                     <p class="event-description">Second edition of our innovation challenge. Ideate, build, and present your best solutions.</p>
-                    
+                    <div class="event-actions">
+                        <button class="btn-view-gallery" style="visibility: hidden;">Gallery</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,7 +73,6 @@
                     <span class="event-status status-ongoing">ONGOING</span>
                     <h3 class="event-title">Tech talk 2.0</h3>
                     <p class="event-description">A continuing series of talks on cutting-edge technologies, trends, and careers in tech.</p>
-                   
                 </div>
             </div>
         </div>
@@ -264,6 +265,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- Mobile Quick Nav Button -->
+    <button class="quick-nav-btn" id="quickNavBtn" aria-label="Quick navigation">
+        <i class="fas fa-compass"></i>
+    </button>
+    <nav class="quick-nav-menu" id="quickNavMenu" aria-label="Quick links menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="team.html">Team</a>
+        <a href="event.html">Events & Gallery</a>
+        <a href="contactUs.html">Contact</a>
+    </nav>
     <script>
         // Tab functionality
         const tabBtns = document.querySelectorAll('.tab-btn');
