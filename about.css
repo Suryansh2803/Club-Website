@@ -250,12 +250,12 @@ p {
 }
 
 .mentor-santosh {
-    background-image: url('../santosh.jpeg');
+    background-image: url('santosh.jpeg');
     background-position: center 30%;
 }
 
 .mentor-attiuttama {
-    background-image: url('../attiuttama.jpeg');
+    background-image: url('attiuttama.jpeg');
     background-position: center 20%;
 }
 
