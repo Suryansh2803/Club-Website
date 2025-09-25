@@ -589,34 +589,101 @@ function hydrateUpcomingFromEventsPage() {
         const galleryGrid = document.getElementById('galleryGrid');
         const registrationForm = document.getElementById('registrationForm');
         
-        // Sample gallery images (in a real scenario, these would be specific to each event)
-        const galleryImages = [
-            'https://source.unsplash.com/random/600x400/?event,1',
-            'https://source.unsplash.com/random/600x400/?event,2',
-            'https://source.unsplash.com/random/600x400/?event,3',
-            'https://source.unsplash.com/random/600x400/?event,4',
-            'https://source.unsplash.com/random/600x400/?event,5',
-            'https://source.unsplash.com/random/600x400/?event,6'
-        ];
+
+        // Manifest mapping event names to their image filenames (relative to Photos/)
+        // Helper to normalize event titles for manifest keys
+        function normalizeEventTitle(title) {
+            return title.trim().toLowerCase().replace(/\s+/g, ' ');
+        }
+
+        // Manifest mapping normalized event names to their image filenames (relative to Photos/)
+        const galleryManifest = {
+            [normalizeEventTitle('IEEE ICPCT')]: [
+                
+                'IMG_3930.JPG',
+                'IMG_3934.JPG',
+                'IMG_3947.JPG',
+                'IMG_3950.JPG'
+                
+            ],
+            [normalizeEventTitle('Love babber')]: [
+                '460800669_900079045299409_4486431011803309100_n.webp.jpg',
+                '460843589_801008911972855_5144800258403651627_n.webp.jpg',
+                '460844863_1245005269775289_3765632684257513860_n.webp.jpg',
+                '460871075_501722152486877_2435792933227711801_n.webp.jpg',
+                '460895475_491915716981047_1662517664211114890_n.webp.jpg',
+                '460896089_492111677124410_3850012403773717666_n.webp.jpg',
+                '460941733_468831362817392_7636205019101193379_n.webp.jpg',
+                '461018361_1263101584683675_6757157763231182934_n.webp.jpg',
+                '461062633_3741464239501207_2510399301290970497_n.webp.jpg',
+                '461063098_2282956892044546_18067509712876813_n.webp.jpg'
+            ],
+            [normalizeEventTitle('Supernova')]: [
+                'WhatsApp Image 2025-09-25 at 21.59.33_1ed366a1.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.33_afb19fec.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.34_40676275.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.34_5c21f4b8.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.35_98741c15.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.35_a075f5d5.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.36_8f2eb707.jpg',
+                'WhatsApp Image 2025-09-25 at 21.59.36_bf61d21d.jpg'
+            ],
+            [normalizeEventTitle('Tech elevate')]: [
+                'get (10).jpeg',
+                'get (11).jpeg',
+                'get (12).jpeg',
+                'get (13).jpeg',
+                'get (14).jpeg',
+                'get (15).jpeg',
+                'get (16).jpeg',
+                'get (17).jpeg',
+                'get (18).jpeg',
+                'get (19).jpeg',
+                'get (20).jpeg',
+                'get (21).jpeg',
+                'get (22).jpeg'
+            ],
+            [normalizeEventTitle('Toyota Hackathon')]: [
+                'IMG_2503.JPEG',
+                'IMG_2505.JPEG',
+                'IMG_2986.JPG',
+                'IMG_3353.JPG',
+                'IMG_3506 (1).JPG',
+                'IMG_3508.JPG'
+                // ...add more as needed
+            ]
+            // Add more events as needed
+        };
         
         // Function to open gallery
         function openGallery(eventTitle, isPastEvent) {
             modalTitle.textContent = `${eventTitle} - Gallery`;
-            
             // Clear previous gallery images
             galleryGrid.innerHTML = '';
-            
-            // Add images to gallery
-            galleryImages.forEach(imgSrc => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `<img src="${imgSrc}" alt="${eventTitle}">`;
-                galleryGrid.appendChild(galleryItem);
-            });
-            
+
+            // Use manifest to get images for this event
+            const images = galleryManifest[normalizeEventTitle(eventTitle)] || [];
+            if (images.length > 0) {
+                const folderPath = `Photos/${eventTitle}/`;
+                images.forEach(filename => {
+                    const imgSrc = folderPath + filename;
+                    const ext = filename.split('.').pop().toLowerCase();
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    if (['heic', 'heif'].includes(ext)) {
+                        // For HEIC/HEIF, show a placeholder or try to display (browser support is limited)
+                        galleryItem.innerHTML = `<img src="${imgSrc}" alt="${eventTitle}" style="object-fit:contain; background:#222;" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x300?text=HEIC+Not+Supported';">`;
+                    } else {
+                        galleryItem.innerHTML = `<img src="${imgSrc}" alt="${eventTitle}">`;
+                    }
+                    galleryGrid.appendChild(galleryItem);
+                });
+            } else {
+                galleryGrid.innerHTML = '<div style="color:#fff;text-align:center;padding:2rem;">No images found for this event.</div>';
+            }
+
             // Show/hide registration form based on whether event is past
             registrationForm.style.display = isPastEvent ? 'none' : 'block';
-            
             // Show modal
             galleryModal.classList.add('active');
         }
