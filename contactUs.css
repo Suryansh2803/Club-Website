@@ -116,7 +116,7 @@ header {
 nav {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 1rem;
             animation: fadeInRight 1s ease-out 0.5s both;
         }
 

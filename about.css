@@ -299,8 +299,8 @@ p {
     z-index: 1;
 }
 
-.mentor-santosh {
-    background-image: url('santosh.jpeg');
+.mentor-sanjeev {
+    background-image: url('sanjeev.jpeg');
     background-position: center 20%;
 }
 
@@ -309,15 +309,10 @@ p {
     background-position: center 12%;
 }
 
-/* Zarrish background and hide circle avatar */
-.mentor-zarrish {
-    background-image: url('zarrish.png');
-    background-position: center 18%;
-}
-.mentor-zarrish .member-avatar { display: none; }
+
 
 /* Hide small circular avatar for these mentor cards */
-.mentor-santosh .member-avatar,
+.mentor-sanjeev .member-avatar,
 .mentor-attiuttama .member-avatar {
     display: none;
 }
