@@ -37,7 +37,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 5rem;
+            padding: 1rem 2.5rem;
             z-index: 999;
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
@@ -111,10 +111,11 @@
 
         .logo-text {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
             color: #ffffff;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .logo-text:hover {
@@ -283,9 +284,9 @@
         }
 
         .page-title {
-            font-size: 3.5rem;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             margin-bottom: 1rem;
             text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
             font-family: 'Orbitron', sans-serif;
@@ -293,7 +294,7 @@
         }
 
         .page-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
             color: #d0d0d0;
             max-width: 700px;
             margin: 0 auto;
@@ -945,18 +946,17 @@
         /* RESPONSIVE DESIGN */
         @media (max-width: 900px) {
             header {
-                padding: 1rem 2rem;
+                padding: 1rem 1.5rem;
             }
             
             .events-container {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
         }
 
         @media (max-width: 768px) {
-            /* Hide default navbar on small screens; use floating quick-nav */
-            .menu-toggle { display: none !important; }
-            nav { display: none !important; }
+            /* Show hamburger, hide full nav */
+            .menu-toggle { display: flex !important; }
             
             nav {
                 position: fixed;
@@ -1005,11 +1005,11 @@
             }
             
             header {
-                padding: 1rem;
+                padding: 0.9rem 1.2rem;
             }
             
             .page-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .event-tabs {
@@ -1025,75 +1025,26 @@
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
+            
+            .events-container {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* Show buttons and hide navbar up to tablets */
-        @media (max-width: 1024px) {
-            nav { display: none !important; }
-            .menu-toggle { display: none !important; }
-            .quick-nav-btn { display: flex; }
-            .page-toggle-btn { display: flex; }
+        /* Tablet: nav stays visible but compact */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+            nav {
+                gap: 0.5rem;
+            }
+            nav a {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
         }
 
-        /* Quick Nav and Page Toggle (copied minimal styles for Events page) */
-        .quick-nav-btn {
-            position: fixed;
-            right: 1rem;
-            bottom: 1.25rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            border: 1px solid rgba(43,138,239,0.35);
-            background: linear-gradient(135deg, rgba(43,138,239,0.25), rgba(255,107,107,0.25));
-            color: #fff;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1100;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-            backdrop-filter: blur(10px);
-        }
-        .quick-nav-btn i { font-size: 1.3rem; }
-        .quick-nav-menu {
-            position: fixed;
-            right: 1rem;
-            bottom: 4.5rem;
-            background: rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 0.5rem 0;
-            min-width: 180px;
-            display: none;
-            z-index: 1100;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-            backdrop-filter: blur(10px);
-        }
-        .quick-nav-menu a {
-            display: block;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.6rem 0.9rem;
-        }
-        .quick-nav-menu a:hover { background: rgba(43,138,239,0.2); }
-
-        .page-toggle-btn {
-            position: fixed;
-            right: 1rem;
-            bottom: 4.75rem; /* just above quick nav */
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            border: 1px solid rgba(43,138,239,0.35);
-            background: linear-gradient(135deg, rgba(255,107,107,0.25), rgba(43,138,239,0.25));
-            color: #fff;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1100;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-            backdrop-filter: blur(10px);
-        }
-        .page-toggle-btn i { font-size: 1.2rem; }
 
         @media (max-width: 600px) {
             .container {

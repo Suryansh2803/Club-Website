@@ -4,74 +4,44 @@ const teamData = {
         title: "Core Team",
         description: "Executive leadership and faculty coordination.",
         members: [
-            { name: "Riya Batra", role: "President", description: "", skills: [], social: {}, avatar: "fas fa-crown" },
-            { name: "Kunal Rohilla", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie" },
-            { name: "Palak Bansal", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check" },
-            { name: "Jahan Aara", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" }
+            { name: "Unnayan", role: "President", description: "", skills: [], social: {}, avatar: "fas fa-crown", photo: "unnayan.jpeg" },
+            { name: "Tanishk", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie" },
+            { name: "Avishka", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" },
+            { name: "Shruti", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check" },
+            { name: "Himanshu", role: "Treasurer", description: "", skills: [], social: {}, avatar: "fas fa-wallet" },
+            { name: "Siddharth", role: "Event Organizer", description: "", skills: [], social: {}, avatar: "fas fa-calendar-check" }
         ]
     },
     technical: {
         title: "Tech Team",
         description: "Developers and engineers driving technology initiatives.",
         members: [
-            { name: "Shiven", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Divyam Srivastava", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Satyam Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Manya Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Tanishk Rastogi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Suryansh Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Himanshu Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Arsh Murtaza", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Sameer Rathore", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Aman Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" },
-            { name: "Nikunj Goyal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-code" }
+            { name: "Sameer", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-code", photo: "sameer.jpeg" },
+            { name: "Suryansh", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-code", photo: "Suryansh.jpeg" }
         ]
     },
     management: {
         title: "Management Team",
         description: "Operations, planning, and coordination.",
         members: [
-            { name: "Aditya Mani Tripathi", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Avnish Awasthi", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Upendra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Siddharth Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Palak Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Divyansh Srivastav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Jai thawal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Unnayan Varshney", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Anushika Gupta", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Kinjal Rajput", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
-            { name: "Aayush Chauhan", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" }
+            { name: "Daksh", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Jai", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog", photo: "jai.jpeg" }
         ]
     },
     social: {
         title: "Social Media Team",
         description: "Digital presence and community engagement.",
         members: [
-            { name: "Rajeev Kushwaha", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Kriti Jadil", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Ananya Singhal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Anishkid", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Shruti Kesrawani", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Shreya Trivedi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
-            { name: "Vasundhara Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" }
+            { name: "Sumit", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Manya", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt", photo: "manya.jpeg" }
         ]
     },
     pr: {
         title: "PR Team",
         description: "Public relations and outreach.",
         members: [
-            { name: "Hardik Varshney", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Swasti Jaiswal", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Yash Sharma", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Akshita Dhingra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Nishit Tiwari", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Sakshi Sinha", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Akshay Bhati", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Namrata Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Ishita Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Archita Saxena", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
-            { name: "Aditya Tiwari", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" }
+            { name: "Aditya Tiwari", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Palak Varshney", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn", photo: "palak.jpeg" }
         ]
     },
     creative: {
@@ -79,39 +49,31 @@ const teamData = {
         description: "Design, visuals, and creative concepts.",
         members: [
             { name: "Tarun Kaushik", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Kartik Singhal", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Siddharth Jha", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Sachin Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Avishk Singh Shishodia", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Sumit Yadav", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" }
+            { name: "Kartik Singhal", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" }
         ]
     },
     dam: {
         title: "DAM Team",
         description: "Data acquisition and management.",
         members: [
-            { name: "Lavanya Garg", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Mayank Chaurasia", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Rishi om Patidar", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Bhumi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Manjari Singh", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Aditya Vaid", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Anuradha Sharma", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Alok Mishra", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" },
-            { name: "Rishi Kumar", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-database" }
+            { name: "Rishi", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Vedant", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database", photo: "vedant.jpeg" }
         ]
     },
     editorial: {
         title: "Editorial Team",
         description: "Content writing and editorial design.",
         members: [
-            { name: "Kritika", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Avichal Pandey", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Daksh Bhasin", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Vamika Jaiswal", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Bhumik a Joshi", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Ashi Shrivastava", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
-            { name: "Anvesha Pandey", role: "Member", description: "", skills: [], social: {}, avatar: "fas fa-edit" }
+            { name: "Anveesha", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Vamika", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-edit", photo: "vamika.jpeg" }
+        ]
+    },
+    ugc: {
+        title: "UGC Team",
+        description: "User Generated Content creation and management.",
+        members: [
+            { name: "Siddharth", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-video" },
+            { name: "Sachin", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-video", photo: "sachin.jpeg" }
         ]
     }
 };
@@ -125,8 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeSparkleEffect();
     hydrateUpcomingFromEventsPage();
-    initializeQuickNav();
-    initializePageToggle();
 });
 
 // Navigation functionality
@@ -334,10 +294,14 @@ function initializeTeamSlider() {
             `<a href="${url}" class="social-link"><i class="fab fa-${platform}"></i></a>`
         ).join('');
 
+        const avatarHTML = member.photo
+            ? `<img src="${member.photo}" alt="${member.name}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">`
+            : `<i class="${member.avatar}"></i>`;
+
         return `
             <div class="team-member ${member.role.toLowerCase().includes('lead') ? 'lead' : 'member'}">
                 <div class="member-avatar">
-                    <i class="${member.avatar}"></i>
+                    ${avatarHTML}
                 </div>
                 <h3 class="member-name">${member.name}</h3>
                 <p class="member-role">${member.role}</p>
@@ -460,45 +424,6 @@ window.addEventListener('resize', function() {
         }
     }, 250);
 });
-// Quick navigation floating button for mobile
-function initializeQuickNav() {
-    const btn = document.getElementById('quickNavBtn');
-    const menu = document.getElementById('quickNavMenu');
-    if (!btn || !menu) return;
-
-    const toggle = () => {
-        const isOpen = menu.style.display === 'block';
-        menu.style.display = isOpen ? 'none' : 'block';
-    };
-    btn.addEventListener('click', toggle);
-
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && e.target !== btn) {
-            menu.style.display = 'none';
-        }
-    });
-}
-
-// Floating Page Toggle (cycles through pages)
-function initializePageToggle() {
-    const btn = document.getElementById('pageToggleBtn');
-    if (!btn) return;
-    const pages = [
-        'index.html',
-        'about.html',
-        'team.html',
-        'event.html',
-        'contactUs.html'
-    ];
-    // Normalize current location to one of the pages (basename)
-    const path = window.location.pathname.replace(/\\/g, '/');
-    const current = pages.findIndex(p => path.endsWith('/' + p) || path.endsWith(p));
-    btn.addEventListener('click', () => {
-        const next = (current >= 0 ? current + 1 : 1) % pages.length;
-        window.location.href = pages[next];
-    });
-}
 
 // Populate homepage footer upcoming events by scraping event cards on event.html
 function hydrateUpcomingFromEventsPage() {
@@ -743,23 +668,25 @@ function hydrateUpcomingFromEventsPage() {
             }
         });
 
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real application, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. We will get back to you at ${email} soon.`);
-            
-            // Reset the form
-            document.getElementById('contactForm').reset();
-        });
+        // Form submission handling (only on contact page)
+        const contactFormEl = document.getElementById('contactForm');
+        if (contactFormEl) {
+            contactFormEl.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // In a real application, you would send this data to a server
+                alert(`Thank you, ${name}! Your message has been received. We will get back to you at ${email} soon.`);
+                
+                // Reset the form
+                contactFormEl.reset();
+            });
+        }
 
         // Simple animation for elements when they come into view
         document.addEventListener('DOMContentLoaded', function() {

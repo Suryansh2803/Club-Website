@@ -65,7 +65,7 @@ p {
     margin: 0 auto;
     padding: 0 2rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* HEADER */
@@ -73,7 +73,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 5rem;
+    padding: 1rem 3rem;
     z-index: 999;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
@@ -147,10 +147,11 @@ header:hover {
 
 .logo-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
     color: #ffffff;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .logo-text:hover {
@@ -545,9 +546,9 @@ nav a.active {
 }
 
 .hero-heading {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     margin: 2rem 0;
     line-height: 1.2;
     text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
@@ -613,9 +614,9 @@ a, button, .btn-get-started, .btn-signing-main {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     margin: 2rem 0;
     line-height: 1.2;
     text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
@@ -711,7 +712,7 @@ h1 {
 
 .section-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: clamp(1.6rem, 4vw, 3rem);
     margin-bottom: 4rem;
     font-family: 'Orbitron', sans-serif;
     color: #ffffff;
@@ -860,9 +861,9 @@ h1 {
 
 .page-title {
     text-align: center;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     margin-bottom: 1rem;
     text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
     font-family: 'Orbitron', sans-serif;
@@ -905,7 +906,8 @@ h1 {
 .core-riya-batra::after,
 .core-kunal-rohilla::after,
 .core-jahan-aara::after,
-.core-palak-bansal::after {
+.core-palak-bansal::after,
+.core-unnayan::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -917,7 +919,8 @@ h1 {
 .core-card.core-riya-batra,
 .core-card.core-kunal-rohilla,
 .core-card.core-jahan-aara,
-.core-card.core-palak-bansal {
+.core-card.core-palak-bansal,
+.core-card.core-unnayan {
     position: relative;
 }
 
@@ -925,7 +928,8 @@ h1 {
 .core-riya-batra:hover::after,
 .core-kunal-rohilla:hover::after,
 .core-jahan-aara:hover::after,
-.core-palak-bansal:hover::after {
+.core-palak-bansal:hover::after,
+.core-unnayan:hover::after {
     background: transparent;
 }
 
@@ -940,12 +944,14 @@ h1 {
 .core-kunal-rohilla { background: url('Kunal Rohilla.jpg') center/cover no-repeat; background-position: center 35%; }
 .core-jahan-aara { background: url('jaha araa.jpeg') center/cover no-repeat; background-position: center 35%; }
 .core-palak-bansal { background: url('palak.jpg') center/cover no-repeat; background-position: center 40%; }
+.core-unnayan { background: url('unnayan.jpeg') center/cover no-repeat; background-position: center 25%; }
 
 /* Hide circle avatar when background is present */
 .core-riya-batra .core-avatar,
 .core-kunal-rohilla .core-avatar,
 .core-jahan-aara .core-avatar,
-.core-palak-bansal .core-avatar { display: none; }
+.core-palak-bansal .core-avatar,
+.core-unnayan .core-avatar { display: none; }
 
 .core-card.lead { border-left: 4px solid #ff6b6b; }
 .core-card.co-lead { border-left: 4px solid #4ecdc4; }
@@ -977,7 +983,16 @@ h1 {
     color: #fff;
     font-size: 1.6rem;
     box-shadow: 0 8px 22px rgba(43,138,239,0.35);
+    overflow: hidden;
 }
+
+.core-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 
 .core-name {
     font-family: 'Orbitron', sans-serif;
@@ -993,6 +1008,147 @@ h1 {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     font-weight: 700; /* bold */
+}
+
+/* ── Leads Section ───────────────────────────────────────────────── */
+.leads-section {
+    margin-bottom: 2rem;
+}
+
+.leads-subtitle {
+    color: #a0a0a0;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+/* Grid wrapper — holds all dept groups side by side */
+.dept-leads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.dept-leads-group {
+    margin-bottom: 0;
+}
+
+.dept-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #2b8aef;
+    margin-bottom: 1rem;
+    padding: 0.35rem 1rem;
+    background: rgba(43,138,239,0.1);
+    border: 1px solid rgba(43,138,239,0.3);
+    border-radius: 30px;
+}
+
+.leads-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+/* Each lead/co-lead card ─ styled like the reference image */
+.lead-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    overflow: hidden;
+    width: 140px;
+    flex: 0 0 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.lead-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(43,138,239,0.35);
+    border-color: rgba(43,138,239,0.6);
+}
+
+/* Photo area */
+.lead-img-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.lead-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.4s ease;
+}
+
+.lead-card:hover .lead-img-wrap img {
+    transform: scale(1.06);
+}
+
+/* Placeholder when no photo yet */
+.lead-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(43,138,239,0.4);
+    background: linear-gradient(135deg, rgba(20,20,40,0.9), rgba(43,138,239,0.08));
+    border-bottom: 1px dashed rgba(43,138,239,0.25);
+}
+
+/* Name + role info */
+.lead-info {
+    padding: 0.75rem 0.85rem 0.85rem;
+    background: rgba(0,0,0,0.85);
+}
+
+.lead-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lead-role {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.6rem;
+    border-radius: 20px;
+}
+
+.lead-badge {
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.4);
+}
+
+.colead-badge {
+    background: rgba(78, 205, 196, 0.12);
+    color: #4ecdc4;
+    border: 1px solid rgba(78, 205, 196, 0.35);
 }
 
 /* 3D Team Slider Styles */
@@ -1354,13 +1510,14 @@ h1 {
 .flip-container {
     perspective: 1000px;
     width: 100%;
-    height: 500px;
+    height: auto;
+    min-height: 420px;
     margin: 2rem 0;
 }
 
 .flip-card {
     width: 100%;
-    height: 100%;
+    min-height: 420px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -1373,14 +1530,15 @@ h1 {
 .flip-front, .flip-back {
     position: absolute;
     width: 100%;
-    height: 100%;
+    min-height: 420px;
     backface-visibility: hidden;
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 0 30px rgba(43,138,239,0.3);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-y: auto;
 }
 
 .flip-front {
@@ -1689,79 +1847,7 @@ footer::before {
     margin-top: 1rem;
 }
 
-/* Mobile Quick Nav Button */
-.quick-nav-btn {
-    position: fixed;
-    right: 1rem;
-    bottom: 1.25rem;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 1px solid rgba(43,138,239,0.35);
-    background: linear-gradient(135deg, rgba(43,138,239,0.25), rgba(255,107,107,0.25));
-    color: #fff;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-    backdrop-filter: blur(10px);
-}
 
-.quick-nav-btn i { font-size: 1.3rem; }
-
-.quick-nav-menu {
-    position: fixed;
-    right: 1rem;
-    bottom: 4.5rem;
-    background: rgba(0,0,0,0.8);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 0.5rem 0;
-    min-width: 180px;
-    display: none;
-    z-index: 1100;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-    backdrop-filter: blur(10px);
-}
-
-.quick-nav-menu a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.6rem 0.9rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.quick-nav-menu a:hover {
-    background: rgba(43,138,239,0.2);
-}
-
-/* Page Toggle Button */
-.page-toggle-btn {
-    position: fixed;
-    right: 1rem;
-    bottom: 4.75rem; /* just above quick nav */
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 1px solid rgba(43,138,239,0.35);
-    background: linear-gradient(135deg, rgba(255,107,107,0.25), rgba(43,138,239,0.25));
-    color: #fff;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-    backdrop-filter: blur(10px);
-}
-
-.page-toggle-btn i { font-size: 1.2rem; }
-
-@media (max-width: 768px) {
-    .quick-nav-btn { display: flex; }
-    .page-toggle-btn { display: flex; }
-}
 .newsletter-input {
     padding: 0.8rem 1rem;
     border-radius: 10px;
@@ -1829,29 +1915,13 @@ footer::before {
 }
 
 /* Desktop */
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
     header {
         padding: 1rem 2rem;
     }
     .hero-background {
         opacity: 0.4;
     }
-    .team-slider {
-        width: 460px;
-        height: 460px;
-    }
-    .team-card {
-        width: 250px;
-        height: 300px;
-    }
-    .team-card:nth-child(1) { transform: rotateY(0deg) translateZ(290px); }
-    .team-card:nth-child(2) { transform: rotateY(45deg) translateZ(290px); }
-    .team-card:nth-child(3) { transform: rotateY(90deg) translateZ(290px); }
-    .team-card:nth-child(4) { transform: rotateY(135deg) translateZ(290px); }
-    .team-card:nth-child(5) { transform: rotateY(180deg) translateZ(290px); }
-    .team-card:nth-child(6) { transform: rotateY(225deg) translateZ(290px); }
-    .team-card:nth-child(7) { transform: rotateY(270deg) translateZ(290px); }
-    .team-card:nth-child(8) { transform: rotateY(315deg) translateZ(290px); }
 }
 
 /* Tablet */
@@ -2280,23 +2350,55 @@ footer::before {
         opacity: 0.1;
     }
 
-    /* Hide navbar and hamburger on mobile; use quick-nav instead */
-    nav { display: none !important; }
-    .menu-toggle { display: none !important; }
-}
-
-/* Extend quick-nav behavior to tablets */
-@media (max-width: 1024px) {
-    nav { display: none !important; }
-    .menu-toggle { display: none !important; }
-    .quick-nav-btn { display: flex; }
-    .page-toggle-btn { display: flex; }
-}
-
-/* Extra small screens */
-@media (max-width: 360px) {
-    .hero-background {
-        opacity: 0.05;
+    /* Reduce padding on mobile */
+    .container {
+        padding: 0 1rem;
     }
 }
 
+/* Tablet: show hamburger menu, hide quick-nav */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+    nav {
+        gap: 0.5rem;
+    }
+    nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .hero-heading {
+        font-size: 1.7rem;
+        letter-spacing: 0;
+    }
+    .page-title {
+        font-size: 1.7rem;
+    }
+    .logo-text {
+        font-size: 1rem;
+    }
+    .nav-logo {
+        width: 40px;
+    }
+    header {
+        padding: 0.8rem 1rem;
+    }
+    .flip-container, .flip-card, .flip-front, .flip-back {
+        min-height: 500px;
+    }
+    .lead-card {
+        width: 120px;
+        flex: 0 0 120px;
+    }
+    .lead-img-wrap {
+        height: 140px;
+    }
+    .dept-leads-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-            padding: 1.2rem 5rem;
+            padding: 1rem 2.5rem;
     z-index: 999;
             background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
@@ -102,10 +102,11 @@ header {
 
 .logo-text {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
             color: #ffffff;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
         .logo-text:hover {
@@ -325,7 +326,7 @@ nav a.active {
             }
             
             header {
-                padding: 1rem;
+                padding: 0.9rem 1.2rem;
     }
 }
 
@@ -352,9 +353,9 @@ nav a.active {
         }
 
         .page-title {
-            font-size: 3.5rem;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             margin-bottom: 1rem;
             text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
             font-family: 'Orbitron', sans-serif;
@@ -362,7 +363,7 @@ nav a.active {
         }
 
         .page-subtitle {
-            font-size: 1.2rem;
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
             color: #d0d0d0;
             max-width: 700px;
             margin: 0 auto;
