@@ -921,7 +921,8 @@ h1 {
 .core-kunal-rohilla::after,
 .core-jahan-aara::after,
 .core-palak-bansal::after,
-.core-unnayan::after {
+.core-unnayan::after,
+.core-shruti::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -934,7 +935,8 @@ h1 {
 .core-card.core-kunal-rohilla,
 .core-card.core-jahan-aara,
 .core-card.core-palak-bansal,
-.core-card.core-unnayan {
+.core-card.core-unnayan,
+.core-card.core-shruti {
     position: relative;
 }
 
@@ -943,7 +945,8 @@ h1 {
 .core-kunal-rohilla:hover::after,
 .core-jahan-aara:hover::after,
 .core-palak-bansal:hover::after,
-.core-unnayan:hover::after {
+.core-unnayan:hover::after,
+.core-shruti:hover::after {
     background: transparent;
 }
 
@@ -959,13 +962,15 @@ h1 {
 .core-jahan-aara { background: url('jaha araa.jpeg') center/cover no-repeat; background-position: center 35%; }
 .core-palak-bansal { background: url('palak.jpg') center/cover no-repeat; background-position: center 40%; }
 .core-unnayan { background: url('unnayan.jpeg') center/cover no-repeat; background-position: center 25%; }
+.core-shruti { background: url('shruti.png') center/cover no-repeat; background-position: center 25%; }
 
 /* Hide circle avatar when background is present */
 .core-riya-batra .core-avatar,
 .core-kunal-rohilla .core-avatar,
 .core-jahan-aara .core-avatar,
 .core-palak-bansal .core-avatar,
-.core-unnayan .core-avatar { display: none; }
+.core-unnayan .core-avatar,
+.core-shruti .core-avatar { display: none; }
 
 .core-card.lead { border-left: 4px solid #ff6b6b; }
 .core-card.co-lead { border-left: 4px solid #4ecdc4; }

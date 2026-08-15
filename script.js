@@ -7,7 +7,7 @@ const teamData = {
             { name: "Unnayan", role: "President", description: "", skills: [], social: {}, avatar: "fas fa-crown", photo: "unnayan.jpeg" },
             { name: "Tanishk", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie" },
             { name: "Avishka", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" },
-            { name: "Shruti", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check" },
+            { name: "Shruti", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check", photo: "shruti.png" },
             { name: "Himanshu", role: "Treasurer", description: "", skills: [], social: {}, avatar: "fas fa-wallet" },
             { name: "Siddharth", role: "Event Organizer", description: "", skills: [], social: {}, avatar: "fas fa-calendar-check" }
         ]
