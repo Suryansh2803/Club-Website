@@ -2108,8 +2108,52 @@ footer::before {
         display: none !important;
     }
     
+
     .flip-container {
-        height: 600px;
+        height: auto;
+        min-height: 520px;
+    }
+
+    .flip-card {
+        min-height: 520px;
+    }
+
+    .flip-front, .flip-back {
+        position: relative;       /* drop out of absolute so height auto works */
+        min-height: 520px;
+        backface-visibility: hidden;
+    }
+
+    .flip-card.flipped .flip-front {
+        display: none;            /* hide front when flipped */
+    }
+
+    .flip-card:not(.flipped) .flip-back {
+        display: none;            /* hide back when not flipped */
+    }
+
+    /* Disable 3D rotate on mobile – use show/hide instead */
+    .flip-card {
+        transform-style: flat;
+    }
+
+    .flip-card.flipped {
+        transform: none;
+    }
+
+    .flip-back {
+        transform: none;          /* no pre-rotated state needed */
+    }
+
+    /* Keep indicator dot visible but properly spaced */
+    .page-indicator {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .indicator-dot {
+        width: 10px;
+        height: 10px;
     }
 
     .card-title {
@@ -2301,12 +2345,18 @@ footer::before {
     }
 
     .flip-container {
-        height: 700px;
+        min-height: 480px;
     }
 
-    .flip-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+    .flip-card,
+    .flip-front,
+    .flip-back {
+        min-height: 480px;
+    }
+
+    /* Indicator dot – hide on very small screens to avoid overlap */
+    .page-indicator {
+        display: none;
     }
     
     footer {
