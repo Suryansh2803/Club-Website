@@ -275,59 +275,74 @@ nav a.active {
 }
 
         @media (max-width: 768px) {
+            /* ── Mobile header: allow nav to drop onto its own row ── */
+            header {
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 0.85rem 1.25rem;
+                gap: 0;
+            }
+
+            .logo-container {
+                flex: 1;
+                min-width: 0;
+            }
+
             .menu-toggle {
                 display: flex;
+                flex-shrink: 0;
             }
-            
+
+            /* ── Nav hidden by default – takes zero space ── */
             nav {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 85%;
-                max-width: 350px;
-                height: 100vh;
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(20, 10, 40, 0.98) 100%);
-                backdrop-filter: blur(20px);
+                display: none;
+                width: 100%;
                 flex-direction: column;
-                justify-content: center;
-                gap: 2rem;
-                transform: translateX(100%);
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 1000;
-                border-left: 2px solid rgba(43, 138, 239, 0.3);
-                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+                align-items: stretch;
+                gap: 0;
+                order: 3;
+                background: rgba(8, 8, 12, 0.98);
+                backdrop-filter: blur(20px);
+                border-top: 1px solid rgba(43, 138, 239, 0.25);
+                padding: 0.5rem 0;
+                animation: none;
             }
-            
+
             nav.active {
-                transform: translateX(0);
+                display: flex;
             }
-            
+
             nav a {
-                padding: 1.2rem 2rem;
-                font-size: 1.2rem;
-                text-align: center;
-                border-radius: 15px;
-                margin: 0.5rem 1rem;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(43, 138, 239, 0.2);
-                transition: all 0.3s ease;
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                text-align: left;
+                border-radius: 10px;
+                margin: 0.2rem 0;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                transition: background 0.2s ease, padding-left 0.2s ease;
+                opacity: 1;
+                transform: none;
+                animation: none;
             }
-            
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
             nav a:hover {
-                background: rgba(43, 138, 239, 0.2);
-                border-color: rgba(43, 138, 239, 0.5);
-                transform: translateX(-5px);
+                background: rgba(43, 138, 239, 0.15);
+                padding-left: 2rem;
+                transform: none;
             }
-            
+
             nav a.active {
-                background: linear-gradient(45deg, rgba(43, 138, 239, 0.3), rgba(255, 107, 107, 0.3));
-                border-color: rgba(43, 138, 239, 0.6);
+                background: linear-gradient(90deg, rgba(43, 138, 239, 0.25), transparent);
+                border-left: 3px solid rgba(43, 138, 239, 0.8);
                 color: #fff;
             }
-            
-            header {
-                padding: 0.9rem 1.2rem;
-    }
 }
 
 @media (max-width: 600px) {
