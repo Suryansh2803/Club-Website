@@ -87,7 +87,63 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeSparkleEffect();
     hydrateUpcomingFromEventsPage();
+    hideSplineBranding();
 });
+
+
+// ── Hide "Built with Spline" watermark ───────────────────────────────────────
+// The badge lives inside the spline-viewer Shadow DOM (#logo anchor).
+// We poll until the shadow root is ready, then hide the element.
+// A MutationObserver on each viewer ensures it stays hidden if re-rendered.
+function hideSplineBranding() {
+    const selectors = [
+        '#logo',            // main branding anchor
+        'a[href*="spline"]',
+        '[class*="logo"]',
+        '[id*="logo"]',
+    ];
+
+    function hideShadowBranding(shadowRoot) {
+        selectors.forEach(sel => {
+            shadowRoot.querySelectorAll(sel).forEach(el => {
+                el.style.cssText = 'display:none!important;opacity:0!important;visibility:hidden!important;';
+            });
+        });
+    }
+
+    function watchViewer(viewer) {
+        // Poll until shadowRoot is available
+        const poll = setInterval(() => {
+            if (viewer.shadowRoot) {
+                clearInterval(poll);
+                hideShadowBranding(viewer.shadowRoot);
+
+                // Keep watching in case Spline re-injects it
+                const observer = new MutationObserver(() => hideShadowBranding(viewer.shadowRoot));
+                observer.observe(viewer.shadowRoot, { childList: true, subtree: true });
+            }
+        }, 100);
+
+        // Stop polling after 15s to avoid infinite loops
+        setTimeout(() => clearInterval(poll), 15000);
+    }
+
+    // Watch all current spline-viewers
+    document.querySelectorAll('spline-viewer').forEach(watchViewer);
+
+    // Watch for any spline-viewers added dynamically
+    const bodyObserver = new MutationObserver(mutations => {
+        mutations.forEach(m => {
+            m.addedNodes.forEach(node => {
+                if (node.nodeName === 'SPLINE-VIEWER') watchViewer(node);
+                if (node.querySelectorAll) {
+                    node.querySelectorAll('spline-viewer').forEach(watchViewer);
+                }
+            });
+        });
+    });
+    bodyObserver.observe(document.body, { childList: true, subtree: true });
+}
 
 // Navigation functionality
 function initializeNavigation() {

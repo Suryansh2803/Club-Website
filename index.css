@@ -524,18 +524,32 @@ nav a.active {
     opacity: 0.6;
 }
 
-/* Hide Spline branding badge in homepage hero */
+/* ── Hide "Built with Spline" branding ── */
+/* Attempt 1: ::part() — works if Spline exposes the part name */
 .hero-section spline-viewer::part(branding),
 .hero-section spline-viewer::part(logo),
-.hero-section spline-viewer::part(watermark) {
-    display: none !important;
-}
-
-/* Hide Spline branding badge on Team page */
+.hero-section spline-viewer::part(watermark),
 .team-page spline-viewer::part(branding),
 .team-page spline-viewer::part(logo),
 .team-page spline-viewer::part(watermark) {
     display: none !important;
+}
+
+/* Attempt 2: CSS overlay covering the bottom-right corner where the badge sits */
+spline-viewer {
+    position: relative;
+}
+spline-viewer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 160px;
+    height: 44px;
+    background: inherit;          /* match parent bg */
+    background-color: #000;       /* fallback: black cover */
+    z-index: 10;
+    pointer-events: none;
 }
 
 .content {
