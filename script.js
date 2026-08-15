@@ -140,15 +140,12 @@ function initializeNavigation() {
         function openMobileMenu() {
             nav.classList.add('active');
             menuToggle.classList.add('active');
-            backdrop.classList.add('active');
-            body.style.overflow = 'hidden';
+            // backdrop hidden on mobile (inline dropdown style)
         }
 
         function closeMobileMenu() {
             nav.classList.remove('active');
             menuToggle.classList.remove('active');
-            backdrop.classList.remove('active');
-            body.style.overflow = 'auto';
         }
     }
 }
