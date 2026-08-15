@@ -24,7 +24,7 @@ const teamData = {
         title: "Management Team",
         description: "Operations, planning, and coordination.",
         members: [
-            { name: "Daksh", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog" },
+            { name: "Daksh", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog", photo: "daksh.jpeg" },
             { name: "Jai", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-users-cog", photo: "jai.jpeg" }
         ]
     },
