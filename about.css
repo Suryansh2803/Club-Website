@@ -300,7 +300,7 @@ p {
 }
 
 .mentor-sanjeev {
-    background-image: url('sanjeev.jpeg');
+    background-image: url('hod.png');
     background-position: center 20%;
 }
 
@@ -659,5 +659,4 @@ p {
         grid-template-columns: 1fr;
     }
 }
-
 
