@@ -578,6 +578,8 @@ function hydrateUpcomingFromEventsPage() {
 
         // Manifest mapping normalized event names to their image filenames (relative to Photos/)
         const galleryManifest = {
+            'tech-talk-2.0': ['techtalk.jpg'],
+            'inno-verse-idea-2.0': ['innoverse.jpg'],
             'ieee-icpct': [
                 'IMG_3930.JPG',
                 'IMG_3934.JPG',
@@ -647,14 +649,18 @@ function hydrateUpcomingFromEventsPage() {
             if (images.length > 0) {
                 // Map normalized keys to actual folder names
                 const folderMapping = {
+                    'tech-talk-2.0': "",
+                    'inno-verse-idea-2.0': "",
                     'ieee-icpct': 'IEEE ICPCT',
                     'love-babber': 'Love babber',
                     'supernova': 'Supernova',
                     'tech-elevate': 'Tech elevate',
                     'toyota-hackathon': 'Toyota Hackathon'
                 };
-                const actualFolderName = folderMapping[normalizedKey] || normalizedKey;
-                const folderPath = `Photos/${actualFolderName}/`;
+                const actualFolderName = Object.prototype.hasOwnProperty.call(folderMapping, normalizedKey)
+                    ? folderMapping[normalizedKey]
+                    : normalizedKey;
+                const folderPath = actualFolderName ? `Photos/${actualFolderName}/` : "";
                 images.forEach(filename => {
                     const imgSrc = folderPath + filename;
                     const ext = filename.split('.').pop().toLowerCase();
