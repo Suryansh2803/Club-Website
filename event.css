@@ -518,6 +518,10 @@
             font-size: 0.9rem;
         }
 
+        #upcoming-events .tech-talk-card {
+            background-image: url('tech_talk_3.0.jpeg');
+        }
+
         /* Responsive tweaks for small phones */
         @media (max-width: 768px) {
             .tech-talk-card { min-height: 260px; background-position: center top; }

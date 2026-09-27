@@ -5,11 +5,11 @@ const teamData = {
         description: "Executive leadership and faculty coordination.",
         members: [
             { name: "Unnayan", role: "President", description: "", skills: [], social: {}, avatar: "fas fa-crown", photo: "unnayan.jpeg" },
-            { name: "Tanishk", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie" },
-            { name: "Avishka", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key" },
+            { name: "Tanishk", role: "Vice President", description: "", skills: [], social: {}, avatar: "fas fa-user-tie", photo: "tanishk.jpeg" },
+            { name: "Avishka", role: "Secretary", description: "", skills: [], social: {}, avatar: "fas fa-key", photo: "avishka.jpeg" },
             { name: "Shruti", role: "Student Coordinator", description: "", skills: [], social: {}, avatar: "fas fa-user-check", photo: "shruti.png" },
-            { name: "Himanshu", role: "Treasurer", description: "", skills: [], social: {}, avatar: "fas fa-wallet" },
-            { name: "Siddharth", role: "Event Organizer", description: "", skills: [], social: {}, avatar: "fas fa-calendar-check" }
+            { name: "Himanshu", role: "Treasurer", description: "", skills: [], social: {}, avatar: "fas fa-wallet", photo: "himanshu.jpeg" },
+            { name: "Siddharth", role: "Event Organizer", description: "", skills: [], social: {}, avatar: "fas fa-calendar-check", photo: "siddharth.jpeg" }
         ]
     },
     technical: {
@@ -40,23 +40,15 @@ const teamData = {
         title: "PR Team",
         description: "Public relations and outreach.",
         members: [
-            { name: "Aditya Tiwari", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn" },
+            { name: "Aditya Tiwari", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn", photo: "aditya.jpeg" },
             { name: "Palak Varshney", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-bullhorn", photo: "palak.jpeg" }
-        ]
-    },
-    creative: {
-        title: "Creative Team",
-        description: "Design, visuals, and creative concepts.",
-        members: [
-            { name: "Tarun Kaushik", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" },
-            { name: "Kartik Singhal", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-lightbulb" }
         ]
     },
     dam: {
         title: "DAM Team",
         description: "Data acquisition and management.",
         members: [
-            { name: "Rishi", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-database" },
+            { name: "Rishi", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-database", photo: "rishi.jpeg" },
             { name: "Vedant", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database", photo: "vedant.jpeg" }
         ]
     },
@@ -64,7 +56,7 @@ const teamData = {
         title: "Editorial Team",
         description: "Content writing and editorial design.",
         members: [
-            { name: "Anveesha", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit" },
+            { name: "Anvesha", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-edit", photo: "anvesha.png" },
             { name: "Vamika", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-edit", photo: "vamika.jpeg" }
         ]
     },
@@ -72,7 +64,7 @@ const teamData = {
         title: "UGC Team",
         description: "User Generated Content creation and management.",
         members: [
-            { name: "Siddharth", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-video" },
+            { name: "Siddharth", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-video", photo: "sid.jpeg" },
             { name: "Sachin", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-video", photo: "sachin.jpeg" }
         ]
     }
@@ -507,6 +499,10 @@ function hydrateUpcomingFromEventsPage() {
             collect(upcoming, itemsUpcoming);
             collect(ongoing, itemsOngoing);
 
+            const footerUpcoming = itemsUpcoming
+                .filter(event => !event.startsWith('Supernova 2.0'));
+            footerUpcoming.unshift('TECH TALK 3.0! 🚀');
+
             // Render lists
             function render(target, arr) {
                 target.innerHTML = '';
@@ -522,7 +518,7 @@ function hydrateUpcomingFromEventsPage() {
                 });
             }
 
-            render(upList, itemsUpcoming);
+            render(upList, footerUpcoming);
             render(onList, itemsOngoing);
         })
         .catch(() => {

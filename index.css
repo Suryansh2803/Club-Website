@@ -922,7 +922,11 @@ h1 {
 .core-jahan-aara::after,
 .core-palak-bansal::after,
 .core-unnayan::after,
-.core-shruti::after {
+.core-shruti::after,
+.core-tanishk::after,
+.core-avishka::after,
+.core-himanshu::after,
+.core-siddharth::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -936,7 +940,11 @@ h1 {
 .core-card.core-jahan-aara,
 .core-card.core-palak-bansal,
 .core-card.core-unnayan,
-.core-card.core-shruti {
+.core-card.core-shruti,
+.core-card.core-tanishk,
+.core-card.core-avishka,
+.core-card.core-himanshu,
+.core-card.core-siddharth {
     position: relative;
 }
 
@@ -946,7 +954,11 @@ h1 {
 .core-jahan-aara:hover::after,
 .core-palak-bansal:hover::after,
 .core-unnayan:hover::after,
-.core-shruti:hover::after {
+.core-shruti:hover::after,
+.core-tanishk:hover::after,
+.core-avishka:hover::after,
+.core-himanshu:hover::after,
+.core-siddharth:hover::after {
     background: transparent;
 }
 
@@ -963,6 +975,10 @@ h1 {
 .core-palak-bansal { background: url('palak.jpg') center/cover no-repeat; background-position: center 40%; }
 .core-unnayan { background: url('unnayan.jpeg') center/cover no-repeat; background-position: center 25%; }
 .core-shruti { background: url('shruti.png') center/cover no-repeat; background-position: center 25%; }
+.core-tanishk { background: url('tanishk.jpeg') center/cover no-repeat; background-position: center 25%; }
+.core-avishka { background: url('avishka.jpeg') center/cover no-repeat; background-position: center 25%; }
+.core-himanshu { background: url('himanshu.jpeg') center/cover no-repeat; background-position: center 25%; }
+.core-siddharth { background: url('siddharth.jpeg') center/cover no-repeat; background-position: center 25%; }
 
 /* Hide circle avatar when background is present */
 .core-riya-batra .core-avatar,
@@ -970,7 +986,11 @@ h1 {
 .core-jahan-aara .core-avatar,
 .core-palak-bansal .core-avatar,
 .core-unnayan .core-avatar,
-.core-shruti .core-avatar { display: none; }
+.core-shruti .core-avatar,
+.core-tanishk .core-avatar,
+.core-avishka .core-avatar,
+.core-himanshu .core-avatar,
+.core-siddharth .core-avatar { display: none; }
 
 .core-card.lead { border-left: 4px solid #ff6b6b; }
 .core-card.co-lead { border-left: 4px solid #4ecdc4; }
