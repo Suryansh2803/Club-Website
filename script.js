@@ -64,7 +64,7 @@ const teamData = {
         title: "UGC Team",
         description: "User Generated Content creation and management.",
         members: [
-            { name: "Siddharth", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-video", photo: "sid.jpeg" },
+            { name: "Siddharth", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-video", photo: "siddharthUGC.png" },
             { name: "Sachin", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-video", photo: "sachin.jpeg" }
         ]
     }
@@ -572,9 +572,22 @@ function hydrateUpcomingFromEventsPage() {
             return title.trim().toLowerCase().replace(/\s+/g, '-');
         }
 
-        // Manifest mapping normalized event names to their image filenames (relative to Photos/)
+        // Manifest image paths can be relative to an event folder or the site root.
         const galleryManifest = {
-            'tech-talk-2.0': ['techtalk.jpg'],
+            'tech-talk-2.0': [
+                'techtalk.jpg',
+                'Photos/striver/DSC_0062.JPG.jpeg',
+                'Photos/striver/DSC_0072.JPG.jpeg',
+                'Photos/striver/DSC_0083.JPG.jpeg',
+                'Photos/striver/DSC_0096.JPG.jpeg',
+                'Photos/striver/DSC_0134.JPG.jpeg',
+                'Photos/striver/DSC_0143.JPG.jpeg',
+                'Photos/striver/DSC_0154.JPG.jpeg',
+                'Photos/striver/DSC_0158.JPG.jpeg',
+                'Photos/striver/WhatsApp Image 2026-09-28 at 13.56.04 (1).jpeg',
+                'Photos/striver/WhatsApp Image 2026-09-28 at 13.56.04.jpeg',
+                'Photos/striver/WhatsApp Image 2026-09-28 at 13.56.18.jpeg'
+            ],
             'inno-verse-idea-2.0': ['innoverse.jpg'],
             'ieee-icpct': [
                 'IMG_3930.JPG',
@@ -658,7 +671,7 @@ function hydrateUpcomingFromEventsPage() {
                     : normalizedKey;
                 const folderPath = actualFolderName ? `Photos/${actualFolderName}/` : "";
                 images.forEach(filename => {
-                    const imgSrc = folderPath + filename;
+                    const imgSrc = filename.startsWith('Photos/') ? filename : folderPath + filename;
                     const ext = filename.split('.').pop().toLowerCase();
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
