@@ -32,7 +32,7 @@ const teamData = {
         title: "Social Media Team",
         description: "Digital presence and community engagement.",
         members: [
-            { name: "Sumit", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt" },
+            { name: "Sumit", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt", photo: "sumit.png" },
             { name: "Manya", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-share-alt", photo: "manya.jpeg" }
         ]
     },
