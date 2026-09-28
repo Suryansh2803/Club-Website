@@ -45,8 +45,8 @@ const teamData = {
         ]
     },
     dam: {
-        title: "DAM Team",
-        description: "Data acquisition and management.",
+        title: "Design and Media Team",
+        description: "Design and media for the club.",
         members: [
             { name: "Rishi", role: "Lead", description: "", skills: [], social: {}, avatar: "fas fa-database", photo: "rishi.jpeg" },
             { name: "Vedant", role: "Co-lead", description: "", skills: [], social: {}, avatar: "fas fa-database", photo: "vedant.jpeg" }
