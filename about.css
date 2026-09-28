@@ -304,6 +304,11 @@ p {
     background-position: center 20%;
 }
 
+.mentor-zarrish {
+    background-image: url('zarrish.png');
+    background-position: center 20%;
+}
+
 .mentor-attiuttama {
     background-image: url('attiuttama.jpeg');
     background-position: center 12%;
@@ -313,6 +318,7 @@ p {
 
 /* Hide small circular avatar for these mentor cards */
 .mentor-sanjeev .member-avatar,
+.mentor-zarrish .member-avatar,
 .mentor-attiuttama .member-avatar {
     display: none;
 }
